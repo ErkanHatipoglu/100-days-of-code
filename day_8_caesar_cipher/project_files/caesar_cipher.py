@@ -3,7 +3,6 @@ from art import logo
 # print logo
 print(logo)
 
-# Will use English alphabet
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 # Select encode or decode
@@ -28,7 +27,7 @@ def caesar(start_text, shift_amount, cipher_direction):
     text = 'abc' shift_amount = 10 --> decoded text = 'klm',
     text = 'abc' shift_amount = 25 --> decoded text = 'zab',
     text = 'abc' shift_amount = 26 --> decoded text = 'abc',
-    
+
     examples: decode
     text = 'abc' shift_amount = 01 --> encoded text = 'zab',
     text = 'abc' shift_amount = 10 --> encoded text = 'qrs',
@@ -42,7 +41,7 @@ def caesar(start_text, shift_amount, cipher_direction):
   """
   end_text = ""
   is_valid_direction = False
-  
+
   # For encoding, the shift will be to the positive direction, 
   # whereas for decoding the shift will be in the negative direction. 
   if cipher_direction == "encode":
@@ -54,14 +53,17 @@ def caesar(start_text, shift_amount, cipher_direction):
   else:
     is_valid_direction = False
     print("Please type 'encode' or 'decode'")
- 
+
   # Replace all the letters by changing the index number to + shift
   # to the right or left. Note that since there are 26 letters in English
   # we use the modulus operator. 
   if is_valid_direction:
     for letter in start_text:
-      index = (alphabet.index(letter) + shift_amount) % 26
-      end_text += alphabet[index]
+      if letter in alphabet:
+        index = (alphabet.index(letter) + shift_amount) % 26
+        end_text += alphabet[index]
+      else:
+        end_text += letter
     print(f"The {cipher_direction}d text is {end_text}")
 
 caesar(start_text = text, shift_amount = shift, cipher_direction = direction)
