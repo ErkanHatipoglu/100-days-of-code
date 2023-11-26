@@ -38,9 +38,37 @@ def encrypt(text, shift):
       cipher_text += alphabet[index]
     print(f"The encoded text is {cipher_text}")
 
+# Decryption
+def decrypt(text, shift):
+
+    """
+    Decrypts a given 'text' by replacing all the letters of the text 
+    with a letter 'shift' positions down the alphabet. Note that if
+    shift = 26, the decryption of any text will be itself.
+    
+    examples: 
+    text = 'abc' shift = 1 --> encoded text = '',
+    text = 'abc' shift = 10 --> encoded text = '',
+    text = 'abc' shift = 25 --> encoded text = '',
+    text = 'abc' shift = 26 --> encoded text = '', 
+    
+    :param text: text to decode - string 
+    :param shift: cipher amount - int
+
+    """
+    plain_text = ""
+
+    # Replace all the letters by changing the index number to + shift
+    # to the left. Note that since there are 26 letters in English we 
+    # use modulus operator. 
+    for letter in text:
+      index = (alphabet.index(letter) - shift) % 26
+      plain_text += alphabet[index]
+    print(f"The encoded text is {plain_text}")
+
 if direction == "encode":
   encrypt(text, shift)
 elif direction == "decode":
-  print("Not there yet!")
+  decrypt(text, shift)
 else:
   print("Please type 'encode' or 'decode'")
