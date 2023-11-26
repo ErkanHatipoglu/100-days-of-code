@@ -1,3 +1,1 @@
-Ceasar cipher is an encryption technique invented by [Gaius Julius Caesar](https://simple.wikipedia.org/wiki/Julius_Caesar#).
-
-Detailed information about Ceasar cipher can be found in [Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher) and [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/caesar-cipher#).
+Ceasar cipher is an encryption technique invented by [Gaius Julius Caesar](https://simple.wikipedia.org/wiki/Julius_Caesar#). Detailed information about Ceasar cipher can be found in [Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher) and [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/caesar-cipher#).
