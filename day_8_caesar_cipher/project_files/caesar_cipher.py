@@ -59,12 +59,13 @@ def decrypt(text, shift):
     plain_text = ""
 
     # Replace all the letters by changing the index number to + shift
-    # to the left. Note that since there are 26 letters in English we 
-    # use modulus operator. 
+    # to the left. Note that we do not need to use the modulus operator 
+    # since we won't get an 'index out of range' error for negative
+    # numbers 
     for letter in text:
-      index = (alphabet.index(letter) - shift) % 26
+      index = (alphabet.index(letter) - shift)
       plain_text += alphabet[index]
-    print(f"The encoded text is {plain_text}")
+    print(f"The decoded text is {plain_text}")
 
 if direction == "encode":
   encrypt(text, shift)
