@@ -19,7 +19,7 @@ def encrypt(text, shift):
     shift = 26, the cipher of any text will be itself.
     
     examples: 
-    text = 'abc' shift = 1 --> decoded text = 'bcd',
+    text = 'abc' shift = 01 --> decoded text = 'bcd',
     text = 'abc' shift = 10 --> decoded text = 'klm',
     text = 'abc' shift = 25 --> decoded text = 'zab',
     text = 'abc' shift = 26 --> decoded text = 'abc', 
@@ -47,10 +47,10 @@ def decrypt(text, shift):
     shift = 26, the decryption of any text will be itself.
     
     examples: 
-    text = 'abc' shift = 1 --> encoded text = '',
-    text = 'abc' shift = 10 --> encoded text = '',
-    text = 'abc' shift = 25 --> encoded text = '',
-    text = 'abc' shift = 26 --> encoded text = '', 
+    text = 'abc' shift = 01 --> encoded text = 'zab',
+    text = 'abc' shift = 10 --> encoded text = 'qrs',
+    text = 'abc' shift = 25 --> encoded text = 'bcd',
+    text = 'abc' shift = 26 --> encoded text = 'abc', 
     
     :param text: text to decode - string 
     :param shift: cipher amount - int
