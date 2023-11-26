@@ -11,65 +11,55 @@ text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
 # Encryption
-def encrypt(text, shift):
+def caesar(plain_text, shift_amount, index_direction):
 
-    """
-    Encrypts a given 'text' by replacing all the letters of the text 
-    with a letter 'shift' positions up the alphabet. Note that if
-    shift = 26, the cipher of any text will be itself.
-    
-    examples: 
+  """
+    Encrypts or decrypts a given 'text' by replacing all the letters
+    of the text with a letter 'shift' positions up or down the alphabet.
+    Note that if shift = 26, the cipher or decryption of any text will
+    be itself.
+
+    examples: encode
     text = 'abc' shift = 01 --> decoded text = 'bcd',
     text = 'abc' shift = 10 --> decoded text = 'klm',
     text = 'abc' shift = 25 --> decoded text = 'zab',
-    text = 'abc' shift = 26 --> decoded text = 'abc', 
+    text = 'abc' shift = 26 --> decoded text = 'abc',
     
-    :param text: text to decode - string 
-    :param shift: cipher amount - int
-
-    """
-    cipher_text = ""
-
-    # Replace all the letters by changing the index number to + shift
-    # to the right. Note that since there are 26 letters in English we 
-    # use modulus operator. 
-    for letter in text:
-      index = (alphabet.index(letter) + shift) % 26
-      cipher_text += alphabet[index]
-    print(f"The encoded text is {cipher_text}")
-
-# Decryption
-def decrypt(text, shift):
-
-    """
-    Decrypts a given 'text' by replacing all the letters of the text 
-    with a letter 'shift' positions down the alphabet. Note that if
-    shift = 26, the decryption of any text will be itself.
-    
-    examples: 
+    examples: decode
     text = 'abc' shift = 01 --> encoded text = 'zab',
     text = 'abc' shift = 10 --> encoded text = 'qrs',
     text = 'abc' shift = 25 --> encoded text = 'bcd',
     text = 'abc' shift = 26 --> encoded text = 'abc', 
-    
-    :param text: text to decode - string 
-    :param shift: cipher amount - int
 
-    """
-    plain_text = ""
+    :param plain_text: text to decode or encode - string 
+    :param shift_amount: cipher amount - int
+    :param index_direction: shift direction - string
 
-    # Replace all the letters by changing the index number to + shift
-    # to the left. Note that we do not need to use the modulus operator 
-    # since we won't get an 'index out of range' error for negative
-    # numbers 
-    for letter in text:
-      index = (alphabet.index(letter) - shift)
-      plain_text += alphabet[index]
-    print(f"The decoded text is {plain_text}")
+  """
+  caesar_text = ""
+  is_valid_direction = False
+  
+  # For encoding, the shift will be to the positive direction, 
+  # whereas for decoding the shift will be in the negative direction.
+  # if the direction is not written properly no calculations will be
+  # made! 
+  if index_direction == "encode":
+    shift_amount = shift
+    is_valid_direction = True
+  elif index_direction == "decode":
+    shift_amount = -shift
+    is_valid_direction = True
+  else:
+    is_valid_direction = False
+    print("Please type 'encode' or 'decode'")
+ 
+  # Replace all the letters by changing the index number to + shift
+  # to the right or left. Note that since there are 26 letters in
+  # English we use the modulus operator. 
+  if is_valid_direction:
+    for letter in plain_text:
+      index = (alphabet.index(letter) + shift_amount) % 26
+      caesar_text += alphabet[index]
+    print(f"The {index_direction}d text is {caesar_text}")
 
-if direction == "encode":
-  encrypt(text, shift)
-elif direction == "decode":
-  decrypt(text, shift)
-else:
-  print("Please type 'encode' or 'decode'")
+caesar(plain_text = text, shift_amount = shift, index_direction = direction)
