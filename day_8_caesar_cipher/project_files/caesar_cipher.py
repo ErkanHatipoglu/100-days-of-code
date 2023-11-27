@@ -3,18 +3,13 @@ from art import logo
 # print logo
 print(logo)
 
+# Will use English alphabet
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-# Select encode or decode
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+quit_cipher = False
+is_valid_decision = True
 
-# Get text to decode or encode
-text = input("Type your message:\n").lower()
-
-# Get shift number
-shift = int(input("Type the shift number:\n"))
-
-# Encryption
+# Ciphering
 def caesar(start_text, shift_amount, cipher_direction):
 
   """
@@ -66,4 +61,31 @@ def caesar(start_text, shift_amount, cipher_direction):
         end_text += letter
     print(f"The {cipher_direction}d text is {end_text}")
 
-caesar(start_text = text, shift_amount = shift, cipher_direction = direction)
+while not quit_cipher:
+  # Select encode or decode
+  direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+
+  # Get text to decode or encode
+  text = input("Type your message:\n").lower()
+
+  # Get shift number
+  shift = int(input("Type the shift number:\n"))
+  
+  # Call caesar function
+  if is_valid_decision:
+    caesar(start_text = text, shift_amount = shift, cipher_direction = direction)
+  
+  # Ask user if they want to quit or continue
+  decision = input("Type 'yes' if you want to continue ciphering. Type 'no' to quit.\n").lower()
+  
+  # Quit or continue ciphering
+  if decision == "yes":
+    quit_cipher = False
+    is_valid_decision = True
+  elif decision == "no":
+    quit_cipher = True
+    is_valid_decision = True
+  else:
+    print("Please type 'yes' or 'no'.")
+    quit_cipher = False
+    is_valid_decision = False
