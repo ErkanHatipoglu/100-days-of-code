@@ -4,14 +4,10 @@ from art import logo
 print(logo)
 
 # Will use English alphabet
-alphabet = [
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
-    'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-]
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 quit_cipher = False
 is_valid_decision = True
-
 
 # Ciphering
 def caesar(start_text, shift_amount, cipher_direction):
@@ -63,7 +59,6 @@ def caesar(start_text, shift_amount, cipher_direction):
             else:
                 end_text += letter
         print(f"The {cipher_direction}d text is {end_text}")
-
 
 while not quit_cipher:
     # Select encode or decode
