@@ -4,7 +4,7 @@ This repository contains some of the Python projects I have done for the Udemy C
 
 Each project has its own directory and a README file. You can either browse the code or follow the links below to read and learn about the projects.
 
-- [Day 8 - Caesar Cipher](https://github.com/ErkanHatipoglu/100-days-of-code/tree/main/day_8_caesar_cipher)
+- [Day 8 - Caesar Cipher](day_8_caesar_cipher)
 - [Day 9 - Secret Auction](day_9_secret_auction)
 
 
