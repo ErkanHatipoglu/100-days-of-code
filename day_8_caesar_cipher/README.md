@@ -1,10 +1,19 @@
 # Caesar Cipher
 
-Ceasar cipher is an encryption technique invented by Gaius Julius Caesar.
+Ceasar cipher is an encryption technique invented by Gaius Julius Caesar. It involves replacing each letter in a text with another letter positioned a fixed number of places up or down the alphabet.
+
+Below is an example with a right shift of one position:
+
+|          |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|:---------|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
+|**Text**  |A |B |C |D |E |F |G |H |I |J |K |L |M |N |O |P |Q |R |S |T |U |W |X |Y |Z |
+|**Cipher**|B |C |D |E |F |G |H |I |J |K |L |M |N |O |P |Q |R |S |T |U |W |X |Y |Z |A |
+
+If we want to encode "hello world!" for the cipher above we get "ifmmp xpsme!" 
 
 # Instructions 
 
-  
+
 # Flowchart 
 
 
