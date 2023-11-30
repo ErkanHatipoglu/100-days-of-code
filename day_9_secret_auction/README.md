@@ -26,3 +26,5 @@ The flowchart of the "Secret Auction" is as follows:
 # References
 
 - [First-price sealed-bid auction - Wikipedia](https://en.wikipedia.org/wiki/First-price_sealed-bid_auction) 
+
+[Back to main page](https://github.com/ErkanHatipoglu/100-days-of-code)
