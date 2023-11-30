@@ -13,6 +13,12 @@ If we wish to encrypt *'hello world!'* using the mentioned cipher, the result is
 
 # Instructions 
 
+1. Choose either "encode" for encrypting or "decode" for decrypting.
+2. Specify the shift number for encryption or decryption.
+3. The program will automatically encrypt when you choose "encode" and decrypt when you choose "decode."
+4. The result, either the encoded or decoded message, will be displayed.
+5. Choose to continue with another operation or quit the program as needed.
+
 
 # Flowchart 
 
