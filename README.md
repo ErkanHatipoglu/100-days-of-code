@@ -4,8 +4,9 @@ This repository contains some of the Python projects I have done for the Udemy C
 
 Each project has its own directory and a README file. You can either browse the code or follow the links below to read and learn about the projects.
 
-- [Day 8 - Caesar Cipher](day_8_caesar_cipher)
-- [Day 9 - Secret Auction](day_9_secret_auction)
+- [Day 08 - Caesar Cipher](day_8_caesar_cipher)
+- [Day 09 - Secret Auction](day_9_secret_auction)
+- [Day 10 - Calculator App](day_10_calculator_app)
 
 
 
