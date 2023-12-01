@@ -15,3 +15,11 @@ def: multiply(n1, n2):
 # Division
 def: divide(n1, n2):
   return n1/n2
+
+# Operations dictionary
+operations = {
+  "+": add,
+  "-": subtract,
+  "*": multiply,
+  "/": divide
+}
