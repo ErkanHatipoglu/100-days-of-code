@@ -21,46 +21,46 @@ operations = {
     "*": multiply,
     "/": divide,
 }
+def calculator():
+  # finish calculation
+  is_finished = False
 
-# finish calculation
-is_finished = False
+  # get the first input
+  num1 = int(input("What is first number?: "))
 
-# get the first input
-num1 = int(input("What is first number?: "))
+  # Display operations
+  for key in operations:
+    print(key)
 
-# Display operations
-for key in operations:
-  print(key)
+  # get the operation
+  operation_symbol = input("Enter operation symbol: ")
 
-# get the operation
-operation_symbol = input("Enter operation symbol: ")
+  while not is_finished:
+    # get the next input
+    num = int(input("What is the next number?: "))
 
-while not is_finished:
-  # get the next input
-  num = int(input("What is the next number?: "))
+    # define calculation function
+    calculation_function = operations[operation_symbol]
 
-  # define calculation function
-  calculation_function = operations[operation_symbol]
-  
-  # make calculation
-  answer = calculation_function(num1, num)
+    # make calculation
+    answer = calculation_function(num1, num)
 
-  # print answer
-  print(f"{num1} {operation_symbol} {num} = {answer}")
+    # print answer
+    print(f"{num1} {operation_symbol} {num} = {answer}")
 
-  # Ask for continue
-  user_response = input(f"Type 'y' to continue calculating with {answer}, or 'n' to exit.: ")
-  
-  if user_response == "y":
-   
-    # get the operation
-    operation_symbol = input("Pick another operation: ")
-   
-    # store previous answer
-    num1 = answer
+    # Ask for continue
+    user_response = input(f"Type 'y' to continue calculating with {answer}, or 'n' to start a new calculation.: ")
 
-  elif user_response == "n":
-    is_finished = True
+    if user_response == "y":
 
+      # get the operation
+      operation_symbol = input("Pick another operation: ")
+
+      # store previous answer
+      num1 = answer
+
+    elif user_response == "n":
+      is_finished = True
+      calculator()
+calculator()
 print("Bye")
-  
