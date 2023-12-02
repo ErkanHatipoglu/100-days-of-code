@@ -22,14 +22,17 @@ operations = {
     "/": divide,
 }
 
-# get input 1
-num1 = int(input("Enter first number: "))
+# finish calculation
+is_finished = False
 
-# get operator
+# get the first input
+num1 = int(input("What is first number?: "))
+
+# get the operation
 operation_symbol = input("Enter operation symbol: ")
 
-# get input 2
-num2 = int(input("Enter second number: "))
+# get the second input
+num2 = int(input("What is the next number?: "))
 
 # define calculation function
 calculation_function = operations[operation_symbol]
@@ -40,17 +43,31 @@ answer = calculation_function(num1, num2)
 # print answer
 print(f"{num1} {operation_symbol} {num2} = {answer}")
 
-# get operator
-operation_symbol = input("Pick another operation: ")
+while not is_finished:
+  # Ask for continue
+  user_response = input("Type 'y' to continue calculating with {second_answer}, or 'n' to exit.: ")
+  
+  if user_response == "y":
 
-# get input 3
-num3 = int(input("What is the next number?: "))
+    # store previous answer
+    prev_answer = answer
+    
+    # get the operation
+    operation_symbol = input("Pick another operation!!!!: ")
+    
+    # get the input 
+    num = int(input("What is the next number?: "))
+    
+    # define calculation function
+    calculation_function = operations[operation_symbol]
 
-# define calculation function
-calculation_function = operations[operation_symbol]
+    # make calculation
+    answer = calculation_function(prev_answer, num)
 
-# make calculation
-second_answer = calculation_function(answer, num3)
+    # print answer
+    print(f"{prev_answer} {operation_symbol} {num} = {answer}")
+  
+  elif user_response == "n":
+    is_finished = True
 
-# print answer
-print(f"{answer} {operation_symbol} {num3} = {second_answer}")
+print("Bye")
