@@ -6,6 +6,9 @@
 
 # Flowchart 
 
+The flowchart of the "Calculator App" is as follows: 
+
+![flowchart_calculator_app.png](project_files/flowchart_calculator_app.png)
 
 # References
 
