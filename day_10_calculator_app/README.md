@@ -3,6 +3,11 @@
 
 # Instructions 
 
+1. Enter the first number.
+2. Input the operator symbol (+, -, *, /).
+3. Enter the second number.
+4. The program will perform the calculation and display the result.
+5. Choose 'yes' to continue using the calculated value, or 'no' to start a new calculation from the beginning.
 
 # Flowchart 
 
