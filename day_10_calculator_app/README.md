@@ -1,5 +1,6 @@
 # Calculator App
 
+Welcome to the Simple Calculator program! This tool allows you to perform basic calculations with ease.
 
 # Instructions 
 
@@ -17,5 +18,6 @@ The flowchart of the "Calculator App" is as follows:
 
 # References
 
+[Dictionaries - Python documentation](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
 
 [Back to main page](https://github.com/ErkanHatipoglu/100-days-of-code)
