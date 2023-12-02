@@ -1,4 +1,6 @@
+from art import logo
 # Summation
+
 def add(n1, n2):
     return n1 + n2
 
@@ -22,6 +24,9 @@ operations = {
     "/": divide,
 }
 def calculator():
+  #dislay logo
+  print(logo)
+  
   # finish calculation
   is_finished = False
 
