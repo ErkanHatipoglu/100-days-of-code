@@ -31,43 +31,32 @@ num1 = int(input("What is first number?: "))
 # get the operation
 operation_symbol = input("Enter operation symbol: ")
 
-# get the second input
-num2 = int(input("What is the next number?: "))
-
-# define calculation function
-calculation_function = operations[operation_symbol]
-
-# make calculation
-answer = calculation_function(num1, num2)
-
-# print answer
-print(f"{num1} {operation_symbol} {num2} = {answer}")
-
 while not is_finished:
+  # get the next input
+  num = int(input("What is the next number?: "))
+
+  # define calculation function
+  calculation_function = operations[operation_symbol]
+  
+  # make calculation
+  answer = calculation_function(num1, num)
+
+  # print answer
+  print(f"{num1} {operation_symbol} {num} = {answer}")
+
   # Ask for continue
-  user_response = input("Type 'y' to continue calculating with {second_answer}, or 'n' to exit.: ")
+  user_response = input(f"Type 'y' to continue calculating with {answer}, or 'n' to exit.: ")
   
   if user_response == "y":
-
-    # store previous answer
-    prev_answer = answer
-    
+   
     # get the operation
-    operation_symbol = input("Pick another operation!!!!: ")
-    
-    # get the input 
-    num = int(input("What is the next number?: "))
-    
-    # define calculation function
-    calculation_function = operations[operation_symbol]
+    operation_symbol = input("Pick another operation: ")
+   
+    # store previous answer
+    num1 = answer
 
-    # make calculation
-    answer = calculation_function(prev_answer, num)
-
-    # print answer
-    print(f"{prev_answer} {operation_symbol} {num} = {answer}")
-  
   elif user_response == "n":
     is_finished = True
 
 print("Bye")
+  
