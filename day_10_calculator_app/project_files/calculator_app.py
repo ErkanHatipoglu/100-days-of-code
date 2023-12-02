@@ -31,7 +31,7 @@ def calculator():
   is_finished = False
 
   # get the first input
-  num1 = int(input("What is first number?: "))
+  num1 = float(input("What is first number?: "))
 
   # Display operations
   for key in operations:
@@ -42,7 +42,7 @@ def calculator():
 
   while not is_finished:
     # get the next input
-    num = int(input("What is the next number?: "))
+    num = float(input("What is the next number?: "))
 
     # define calculation function
     calculation_function = operations[operation_symbol]
