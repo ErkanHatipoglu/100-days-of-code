@@ -18,6 +18,6 @@ The flowchart of the "Calculator App" is as follows:
 
 # References
 
-[Dictionaries - Python documentation](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
+- [Dictionaries - Python documentation](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
 
 [Back to main page](https://github.com/ErkanHatipoglu/100-days-of-code)
