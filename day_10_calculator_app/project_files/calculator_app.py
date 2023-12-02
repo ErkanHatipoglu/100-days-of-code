@@ -28,6 +28,10 @@ is_finished = False
 # get the first input
 num1 = int(input("What is first number?: "))
 
+# Display operations
+for key in operations:
+  print(key)
+
 # get the operation
 operation_symbol = input("Enter operation symbol: ")
 
