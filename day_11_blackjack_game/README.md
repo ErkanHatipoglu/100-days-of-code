@@ -6,6 +6,9 @@
 
 # Flowchart 
 
+The flowchart of the "Blackjack Game" is as follows: 
+
+![flowchart_blackjack.png](project_files/flowchart_blackjack.png)
 
 # References
 
