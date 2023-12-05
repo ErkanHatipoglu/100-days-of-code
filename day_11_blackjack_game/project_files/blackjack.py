@@ -1,4 +1,6 @@
 import random
+from art import logo
+
 # Card list
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
@@ -8,8 +10,8 @@ def deal_card():
 
 # Function to play the game of Blackjack
 def play_game():
-  # Display a welcome message
-  print("You are playing the game of Blackjack!\n")
+  # Display logo
+  print(logo)
   
   # Prompt the user to decide whether they want to play
   user_request = input("Do you want to play blackjack? (yes/no) ")
