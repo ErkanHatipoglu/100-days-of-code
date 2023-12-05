@@ -1,4 +1,12 @@
-# Define a function to play the game of Blackjack
+import random
+# Card list
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+# Function to deal a card from the deck 
+def deal_card():
+  return random.choice(cards)
+
+# Function to play the game of Blackjack
 def play_game():
   # Display a welcome message
   print("You are playing the game of Blackjack!\n")
