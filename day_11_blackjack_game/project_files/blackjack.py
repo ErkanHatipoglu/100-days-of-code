@@ -46,6 +46,7 @@ def play_game():
 		print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
 		print("Win with a Blackjack :)")
 		game_over = True
+
 	elif player_score == 21 and dealer_score < 17:
 		# Dealer hits till dealer score >= 17
 		while dealer_score < 17:
@@ -55,6 +56,7 @@ def play_game():
 					card = 1
 			dealer_score += card
 			dealer_deck.append(card)
+
 		if player_score == dealer_score:
 			# Draw
 			print(f"Your cards: {player_deck}, current score: {player_score}")
@@ -63,6 +65,7 @@ def play_game():
 			print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
 			print("Draw")
 			game_over = True
+
 		else:
 			# player wins
 			print(f"Your cards: {player_deck}, current score: {player_score}")
@@ -71,6 +74,7 @@ def play_game():
 			print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
 			print("Win with a Blackjack :)")
 			game_over = True
+
 	elif player_score == 21 and dealer_score == 21:
 		# Draw
 		print(f"Your cards: {player_deck}, current score: {player_score}")
@@ -79,6 +83,7 @@ def play_game():
 		print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
 		print("Draw")
 		game_over = True
+
 	elif dealer_score == 21:
 		# Dealer wins directly
 		print(f"Your cards: {player_deck}, current score: {player_score}")
@@ -87,6 +92,7 @@ def play_game():
 		print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
 		print("Dealer has a Blackjack ):")
 		game_over = True
+
 	else:
 		# Display Cards
 		print(f"Your cards: {player_deck}, current score: {player_score}")
@@ -99,6 +105,7 @@ def play_game():
 			if card == 11:
 				if (card + player_score) > 21:
 					card = 1
+
 			player_score += card
 			player_deck.append(card)
 
@@ -109,6 +116,7 @@ def play_game():
 				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
 				print("Dealer wins (:")
 				game_over = True
+
 			elif player_score == 21 and dealer_score > 17:
 				# Player wins
 				hit_request = "n"
@@ -116,6 +124,7 @@ def play_game():
 				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
 				print("Player wins :)")
 				game_over = True
+
 			elif player_score == 21 and dealer_score < 17:
 				# Dealer hits till dealer score >= 17
 				while dealer_score < 17:
@@ -125,6 +134,7 @@ def play_game():
 							card = 1
 				dealer_score += card
 				dealer_deck.append(card)
+
 				if player_score == dealer_score:
 					# Draw
 					hit_request = "n"
@@ -132,6 +142,7 @@ def play_game():
 					print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
 					print("Draw")
 					game_over = True
+
 				else:
 					# Player wins
 					hit_request = "n"
@@ -139,14 +150,14 @@ def play_game():
 					print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
 					print("Player wins :)")
 					game_over = True
+
 			else:
 				# Display Cards
 				print(f"Your cards: {player_deck}, current score: {player_score}")
 				print(f"Computer's first card: [{dealer_deck[0]}]")
 				hit_request = input("Type 'y' to get another card, type 'n' to pass: ")
 
-		if not game_over:
-			
+		if not game_over:			
 			# Hit for dealer
 			while dealer_score < 17 and dealer_score < player_score:
 				card = int(deal_card())
@@ -161,32 +172,38 @@ def play_game():
 				print(f"Your final hand: {player_deck}, final score: {player_score}")
 				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
 				print("Player wins :)")
+
 			elif dealer_score == 21:
 				# Dealer wins
 				print(f"Your final hand: {player_deck}, final score: {player_score}")
 				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
 				print("Dealer wins :)")
+
 			elif player_score > dealer_score:
 				# Player wins
 				print(f"Your final hand: {player_deck}, final score: {player_score}")
 				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
 				print("Player wins :)")
+
 			elif player_score < dealer_score:
 				# Dealer wins
 				print(f"Your final hand: {player_deck}, final score: {player_score}")
 				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
 				print("Dealer wins ):")
+
 			else:
 				# Draw
 				print(f"Your final hand: {player_deck}, final score: {player_score}")
 				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
 				print("Draw")
+
 	# Prompt the user to decide whether they want to play
 	user_request = input("Do you want to play blackjack? (y/n) ")
 
 	# If the user wants to play, recursively call the play_game function
 	if user_request == "y":	  	
 	  	play_game()
+
 	else:
 	    # If the user chooses not to play, display a farewell message
 	    print("Bye :(")
@@ -197,6 +214,7 @@ user_request = input("Do you want to play blackjack? (y/n) ")
 # If the user wants to play, initiate the game by calling the play_game function
 if user_request == "y":
 	play_game()
+	
 else:
 	# If the user chooses not to play, display a farewell message
 	print("Bye :(")
