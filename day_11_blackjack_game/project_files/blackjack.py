@@ -9,21 +9,57 @@ cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 # Function to deal a card from the deck 
 def deal_card():
+	"""
+    Deals a random card from the deck.
+
+    Returns:
+    int: The value of the dealt card.
+    """
 	return random.choice(cards)
 
 # Function for displaying cards
 def display_cards(player_deck, dealer_deck, player_score):
+	"""
+    Displays the current state of the player's and dealer's cards.
+
+    Parameters:
+    player_deck (list): The list of cards in the player's hand.
+    dealer_deck (list): The list of cards in the dealer's hand.
+    player_score (int): The current score of the player.
+
+    Returns:
+    None
+    """
 	print(f"Your cards: {player_deck}, current score: {player_score}")
 	print(f"Computer's first card: [{dealer_deck[0]}]")
 
 # Function for showing the results
 def show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Ooops! What happened?"):
+	"""
+    Displays the final hands and scores, along with a final message.
+
+    Parameters:
+    player_deck (list): The list of cards in the player's hand.
+    dealer_deck (list): The list of cards in the dealer's hand.
+    player_score (int): The final score of the player.
+    dealer_score (int): The final score of the dealer.
+    final_message (str): A message to be displayed indicating the game result.
+
+    Returns:
+    None
+    """
 	print(f"Your final hand: {player_deck}, final score: {player_score}")
 	print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
 	print(f"{final_message}")
 
 # Function to play the game of Blackjack
 def play_game():
+	"""
+    Initiates and plays a round of the Blackjack game, interacting with the user for card decisions.
+
+    Returns:
+    None
+    """
 	game_over = False
 	# Reset decks and scores.
 	player_deck = []
