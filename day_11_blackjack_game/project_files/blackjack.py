@@ -90,7 +90,7 @@ def play_game():
 		print(f"Computer's first card: [{dealer_deck[0]}]")
 		print(f"Your final hand: {player_deck}, final score: {player_score}")
 		print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-		print("Dealer has a Blackjack ):")
+		print("Dealer has a Blackjack :(") # 
 		game_over = True
 
 	else:
@@ -114,7 +114,7 @@ def play_game():
 				hit_request = "n"
 				print(f"Your final hand: {player_deck}, final score: {player_score}")
 				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-				print("Dealer wins (:")
+				print("Dealer wins :(")
 				game_over = True
 
 			elif player_score == 21 and dealer_score > 17:
@@ -177,7 +177,7 @@ def play_game():
 				# Dealer wins
 				print(f"Your final hand: {player_deck}, final score: {player_score}")
 				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
-				print("Dealer wins :)")
+				print("Dealer wins :(")
 
 			elif player_score > dealer_score:
 				# Player wins
@@ -189,7 +189,7 @@ def play_game():
 				# Dealer wins
 				print(f"Your final hand: {player_deck}, final score: {player_score}")
 				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
-				print("Dealer wins ):")
+				print("Dealer wins :(")
 
 			else:
 				# Draw
@@ -214,7 +214,7 @@ user_request = input("Do you want to play blackjack? (y/n) ")
 # If the user wants to play, initiate the game by calling the play_game function
 if user_request == "y":
 	play_game()
-	
+
 else:
 	# If the user chooses not to play, display a farewell message
 	print("Bye :(")
