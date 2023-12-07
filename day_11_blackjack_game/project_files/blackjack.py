@@ -34,7 +34,6 @@ def check_ace_value(card, score):
 		card = 1
 	return card
 
-
 # Function for displaying cards
 def display_cards(player_deck, dealer_deck, player_score):
 	"""
