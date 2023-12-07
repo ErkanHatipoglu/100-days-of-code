@@ -20,7 +20,7 @@ def display_cards(player_deck, dealer_deck, player_score):
 def show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Ooops! What happened?"):
 	print(f"Your final hand: {player_deck}, final score: {player_score}")
 	print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-	print("{final_message}")
+	print(f"{final_message}")
 
 # Function to play the game of Blackjack
 def play_game():
@@ -52,9 +52,7 @@ def play_game():
 	if player_score == 21 and dealer_score >= 17:
 		# Player wins
 		display_cards(player_deck, dealer_deck, player_score)
-		print(f"Your final hand: {player_deck}, final score: {player_score}")
-		print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-		print("Win with a Blackjack :)")
+		show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Win with a Blackjack :)")
 		game_over = True
 
 	elif player_score == 21 and dealer_score < 17:
@@ -70,33 +68,25 @@ def play_game():
 		if player_score == dealer_score:
 			# Draw
 			display_cards(player_deck, dealer_deck, player_score)
-			print(f"Your final hand: {player_deck}, final score: {player_score}")
-			print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-			print("Draw")
+			show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Draw")
 			game_over = True
 
 		else:
 			# player wins
 			display_cards(player_deck, dealer_deck, player_score)
-			print(f"Your final hand: {player_deck}, final score: {player_score}")
-			print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-			print("Win with a Blackjack :)")
+			show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Win with a Blackjack :)")
 			game_over = True
 
 	elif player_score == 21 and dealer_score == 21:
 		# Draw
 		display_cards(player_deck, dealer_deck, player_score)
-		print(f"Your final hand: {player_deck}, final score: {player_score}")
-		print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-		print("Draw")
+		show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Draw")
 		game_over = True
 
 	elif dealer_score == 21:
 		# Dealer wins directly
 		display_cards(player_deck, dealer_deck, player_score)
-		print(f"Your final hand: {player_deck}, final score: {player_score}")
-		print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-		print("Dealer has a Blackjack :(") # 
+		show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Dealer has a Blackjack :(")
 		game_over = True
 
 	else:
@@ -117,17 +107,13 @@ def play_game():
 			if player_score > 21:
 				# Dealer wins
 				hit_request = "n"
-				print(f"Your final hand: {player_deck}, final score: {player_score}")
-				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-				print("Dealer wins :(")
+				show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Dealer wins :(")
 				game_over = True
 
 			elif player_score == 21 and dealer_score > 17:
 				# Player wins
 				hit_request = "n"
-				print(f"Your final hand: {player_deck}, final score: {player_score}")
-				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-				print("Player wins :)")
+				show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Player wins :)")
 				game_over = True
 
 			elif player_score == 21 and dealer_score < 17:
@@ -143,17 +129,13 @@ def play_game():
 				if player_score == dealer_score:
 					# Draw
 					hit_request = "n"
-					print(f"Your final hand: {player_deck}, final score: {player_score}")
-					print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-					print("Draw")
+					show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Draw")
 					game_over = True
 
 				else:
 					# Player wins
 					hit_request = "n"
-					print(f"Your final hand: {player_deck}, final score: {player_score}")
-					print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
-					print("Player wins :)")
+					show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Player wins :)")
 					game_over = True
 
 			else:
@@ -173,33 +155,23 @@ def play_game():
 
 			if dealer_score > 21:
 				# Player wins
-				print(f"Your final hand: {player_deck}, final score: {player_score}")
-				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
-				print("Player wins :)")
+				show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Player wins :)")
 
 			elif dealer_score == 21:
 				# Dealer wins
-				print(f"Your final hand: {player_deck}, final score: {player_score}")
-				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
-				print("Dealer wins :(")
-
+				show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Dealer wins :(")
+				
 			elif player_score > dealer_score:
 				# Player wins
-				print(f"Your final hand: {player_deck}, final score: {player_score}")
-				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
-				print("Player wins :)")
+				show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Player wins :)")
 
 			elif player_score < dealer_score:
 				# Dealer wins
-				print(f"Your final hand: {player_deck}, final score: {player_score}")
-				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
-				print("Dealer wins :(")
+				show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Dealer wins :(")
 
 			else:
 				# Draw
-				print(f"Your final hand: {player_deck}, final score: {player_score}")
-				print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")	
-				print("Draw")
+				show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Draw")
 
 	# Prompt the user to decide whether they want to play
 	user_request = input("Do you want to play blackjack? (y/n) ")
