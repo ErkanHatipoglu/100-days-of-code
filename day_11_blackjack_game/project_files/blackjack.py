@@ -16,6 +16,12 @@ def display_cards(player_deck, dealer_deck, player_score):
 	print(f"Your cards: {player_deck}, current score: {player_score}")
 	print(f"Computer's first card: [{dealer_deck[0]}]")
 
+# Function for showing the results
+def show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Ooops! What happened?"):
+	print(f"Your final hand: {player_deck}, final score: {player_score}")
+	print(f"Computer's final hand: {dealer_deck}, final score: {dealer_score}")
+	print("{final_message}")
+
 # Function to play the game of Blackjack
 def play_game():
 	game_over = False
