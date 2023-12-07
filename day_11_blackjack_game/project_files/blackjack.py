@@ -17,6 +17,24 @@ def deal_card():
     """
 	return random.choice(cards)
 
+def check_ace_value(card, score):
+	"""
+    Checks and adjusts the value of an ace card based on the current score.
+
+    If the card is an ace (with a value of 11) and adding it to the current score would exceed 21, the value of the ace is adjusted to 1.
+
+    Parameters:
+    card (int): The value of the ace card.
+    score (int): The current score of the player or dealer.
+
+    Returns:
+    int: The adjusted value of the ace card.
+    """
+	if card == 11 and (card + score) > 21:
+		card = 1
+	return card
+
+
 # Function for displaying cards
 def display_cards(player_deck, dealer_deck, player_score):
 	"""
@@ -94,10 +112,7 @@ def play_game():
 	elif player_score == 21 and dealer_score < 17:
 		# Dealer hits till dealer score >= 17
 		while dealer_score < 17:
-			card = int(deal_card())
-			if card == 11:
-				if (card + dealer_score) > 21:
-					card = 1
+			card = check_ace_value(int(deal_card()), dealer_score) 
 			dealer_score += card
 			dealer_deck.append(card)
 
@@ -132,11 +147,7 @@ def play_game():
 		# Continue game
 		hit_request = input("Type 'y' to get another card, type 'n' to pass: ")
 		while hit_request == "y":
-			card = int(deal_card())
-			if card == 11:
-				if (card + player_score) > 21:
-					card = 1
-
+			card = check_ace_value(int(deal_card()), player_score)
 			player_score += card
 			player_deck.append(card)
 
@@ -155,12 +166,9 @@ def play_game():
 			elif player_score == 21 and dealer_score < 17:
 				# Dealer hits till dealer score >= 17
 				while dealer_score < 17:
-					card = int(deal_card())
-					if card == 11:
-						if (card + dealer_score) > 21:
-							card = 1
-				dealer_score += card
-				dealer_deck.append(card)
+					card = check_ace_value(int(deal_card()), dealer_score)
+					dealer_score += card
+					dealer_deck.append(card)
 
 				if player_score == dealer_score:
 					# Draw
@@ -182,10 +190,7 @@ def play_game():
 		if not game_over:			
 			# Hit for dealer
 			while dealer_score < 17 and dealer_score < player_score:
-				card = int(deal_card())
-				if card == 11:
-					if (card + dealer_score) > 21:
-						card = 1
+				card = check_ace_value(int(deal_card()), dealer_score)
 				dealer_score += card
 				dealer_deck.append(card)
 
