@@ -11,6 +11,11 @@ cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 def deal_card():
 	return random.choice(cards)
 
+# Function for displaying cards
+def display_cards(player_deck, dealer_deck, player_score):
+	print(f"Your cards: {player_deck}, current score: {player_score}")
+	print(f"Computer's first card: [{dealer_deck[0]}]")
+
 # Function to play the game of Blackjack
 def play_game():
 	game_over = False
