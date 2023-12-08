@@ -92,45 +92,26 @@ def play_game():
 
 	# Deal card for player
 	for num in range(2):
-		card = int(deal_card())
+		card = check_ace_value(int(deal_card()), player_score)
 		player_score += card
 		player_deck.append(card)
 
 	# Deal card for dealer
 	for num in range(2):
-		card = int(deal_card())
+		card = check_ace_value(int(deal_card()), dealer_score)
 		dealer_score += card
 		dealer_deck.append(card)
 
-	if player_score == 21 and dealer_score >= 17:
-		# Player wins
-		display_cards(player_deck, dealer_deck, player_score)
-		show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Win with a Blackjack :)")
-		game_over = True
-
-	elif player_score == 21 and dealer_score < 17:
-		# Dealer hits till dealer score >= 17
-		while dealer_score < 17:
-			card = check_ace_value(int(deal_card()), dealer_score) 
-			dealer_score += card
-			dealer_deck.append(card)
-
-		if player_score == dealer_score:
-			# Draw
-			display_cards(player_deck, dealer_deck, player_score)
-			show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Draw")
-			game_over = True
-
-		else:
-			# player wins
-			display_cards(player_deck, dealer_deck, player_score)
-			show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Win with a Blackjack :)")
-			game_over = True
-
-	elif player_score == 21 and dealer_score == 21:
+	if player_score == 21 and dealer_score == 21:
 		# Draw
 		display_cards(player_deck, dealer_deck, player_score)
 		show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Draw")
+		game_over = True
+
+	elif player_score == 21:
+		# Player wins
+		display_cards(player_deck, dealer_deck, player_score)
+		show_result(player_deck, dealer_deck, player_score, dealer_score, final_message = "Win with a Blackjack :)")
 		game_over = True
 
 	elif dealer_score == 21:
