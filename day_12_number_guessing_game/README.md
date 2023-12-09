@@ -9,6 +9,8 @@
 ## Flowchart
 The flowchart of the "Number Guessing Game" is as follows: 
 
+![flowchart_number_guessing_game.png](project_files/flowchart_number_guessing_game.png)
+
 ## References
 - [Guessing Games - Wikipedia](https://en.wikipedia.org/wiki/Guessing#Games)
 - [A Guessing Game - Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms/intro-to-algorithms/a/a-guessing-game)
