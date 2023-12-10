@@ -13,6 +13,9 @@ DEFAULT = 0
 # User life
 user_life = 0
 
+# Condition to stop the game
+game_over = False
+
 def welcome():
 	"""
     Displays a welcome message for the number guessing game and prompts the user to choose a difficulty level.
@@ -50,8 +53,26 @@ number = randint(1,100)
 # Display welcome message and get level.
 user_life = welcome()
 
-# 
+# If user_life > 0 and Game is not 
+# over continiue guessing
+while user_life > 0 and not game_over:
+	user_guess = int(input("Make a guess: "))
+	user_life -= 1
+	if user_life != 0:
+		if user_guess == number:
+			print(f"You got it! The answer was {user_guess}.")
+			game_over = True
+		elif user_guess > number:
+			print("Too high.")
+			print("Guess again")
+			print(f"You have {user_life} attempts remaining to guess the number")
+		else:
+			print("Too low.")
+			print("Guess again")
+			print(f"You have {user_life} attempts remaining to guess the number")
+	else:
+		print("You've run out of guesses, you lose.")
 
-# Test
-print (f"User Life: {user_life}")
+
+
 
