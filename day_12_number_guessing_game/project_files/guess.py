@@ -28,12 +28,18 @@ def welcome():
 	print("Welcome to the Number Guessing Game!")
 	print(f"I am thinking of a number between {MIN_NUM} and {MAX_NUM}.")
 	user_input = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
+
 	if user_input == "easy":
-		return EASY
+		level = EASY
+		
 	elif user_input == "hard":
-		return HARD
+		level = HARD
+
 	else:
-		return DEFAULT
+		level = DEFAULT
+
+	print(f"You have {level} attempts remaining to guess the number")
+	return level
 
 # print logo
 print(logo)
@@ -43,6 +49,8 @@ number = randint(1,100)
 
 # Display welcome message and get level.
 user_life = welcome()
+
+# 
 
 # Test
 print (f"User Life: {user_life}")
