@@ -44,6 +44,26 @@ def welcome():
 	print(f"You have {level} attempts remaining to guess the number")
 	return level
 
+# Display result
+def display_result(life_remaining, message):
+	"""
+    Displays the result of a guess in the number guessing game.
+
+    Parameters:
+    - life_remaining (int): The number of attempts remaining for the player.
+    - message (str): The message to be displayed indicating the result of the guess.
+
+    Returns:
+    None
+
+    Usage Example:
+    display_result(2, "Too low!")
+    """
+	print(f"{message}")
+	print("Guess again")
+	print(f"You have {life_remaining} attempts remaining to guess the number")
+
+
 # print logo
 print(logo)
 
@@ -63,16 +83,10 @@ while user_life > 0 and not game_over:
 			print(f"You got it! The answer was {user_guess}.")
 			game_over = True
 		elif user_guess > number:
-			print("Too high.")
-			print("Guess again")
-			print(f"You have {user_life} attempts remaining to guess the number")
+			display_result(user_life,"Too high.")
+			
 		else:
-			print("Too low.")
-			print("Guess again")
-			print(f"You have {user_life} attempts remaining to guess the number")
+			display_result(user_life,"Too low.")
+			
 	else:
 		print("You've run out of guesses, you lose.")
-
-
-
-
