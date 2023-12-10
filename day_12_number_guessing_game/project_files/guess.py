@@ -63,7 +63,6 @@ def display_result(life_remaining, message):
 	print("Guess again")
 	print(f"You have {life_remaining} attempts remaining to guess the number")
 
-
 # print logo
 print(logo)
 
