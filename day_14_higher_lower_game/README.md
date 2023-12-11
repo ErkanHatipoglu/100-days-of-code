@@ -1,4 +1,4 @@
-# Number Guessing Game
+# Higher Lower Game
 
 ## Overview
 
@@ -7,7 +7,7 @@
 
 
 ## Flowchart
-The flowchart of the "Number Guessing Game" is as follows: 
+The flowchart of the "Higher Lower Game" is as follows: 
 
 
 ## References
