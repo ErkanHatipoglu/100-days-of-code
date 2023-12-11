@@ -14,6 +14,7 @@ Each project has its dedicated directory. Explore the code and dive into the det
 - [Day 10 - Calculator App](day_10_calculator_app)
 - [Day 11 - Blackjack Game](day_11_blackjack_game)
 - [Day 12 - Number Guessing Game](day_12_number_guessing_game)
+- [Day 14 - Higher Lower Game](day_14_higher_lower_game)
 
 Feel free to browse the code directly or use the provided links to learn more about each project. Happy coding!
 
