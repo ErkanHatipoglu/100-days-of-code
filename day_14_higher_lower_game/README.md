@@ -9,6 +9,7 @@
 ## Flowchart
 The flowchart of the "Higher Lower Game" is as follows: 
 
+![flowchart_higher_lower_game.png](flowchart_higher_lower_game.png)
 
 ## References
 - 
