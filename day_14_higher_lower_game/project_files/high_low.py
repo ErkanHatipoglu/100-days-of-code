@@ -5,6 +5,8 @@ from game_data import data
 # List to store chosen celebrities for the game
 celebrity_list = []
 
+user_score = 0
+
 def get_celebrity(game_data):
     """
     Randomly selects a celebrity from the given game data.
@@ -15,13 +17,25 @@ def get_celebrity(game_data):
     Returns:
     dict: A dictionary containing the selected celebrity's data.
     """
-    return random.choice(game_data) 
+    return random.choice(game_data)
+
+def display_score(score):
+	"""
+    Displays the current score.
+
+    Parameters:
+    score (int): The current score to display.
+    """
+	print(f"You're right! Current score: {score}") 
 
 # Adding a randomly chosen celebrity to the celebrity list for display
 celebrity_list.append(get_celebrity(data))
 
 # Test display
 print(celebrity_list)
+
+# Test score
+display_score(user_score)
 
 
 
