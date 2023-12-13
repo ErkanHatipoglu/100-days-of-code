@@ -1,6 +1,9 @@
 import random
 from art import logo, vs
 from game_data import data
+# from replit import clear # If you are using replit use this. 
+import os # If you are not using replit use this.
+clear = lambda: os.system('cls')
 
 # List to store chosen celebrities for the game
 celebrity_list = []
@@ -52,7 +55,7 @@ def compare_followers(c_list):
 	else:
 		return('b')
 
-# Adding a randomly chosen celebrity to the celebrity list for the game
+# Add a randomly chosen celebrity to the celebrity list for the game
 celebrity_list.append(get_celebrity(data))
 
 while answer_is_true:
@@ -68,7 +71,7 @@ while answer_is_true:
 	# print VS
 	print(vs)
 
-	# Adding a randomly chosen celebrity to the celebrity list for the game
+	# Add a randomly chosen celebrity to the celebrity list for the game
 	celebrity_list.append(get_celebrity(data))
 
 	# Display the second celebrity
@@ -79,7 +82,18 @@ while answer_is_true:
 
 	# Compare followers
 	if answer == compare_followers(celebrity_list):
-		# Continue if answer is true
-		print("continue")
+		
+		answer_is_true = True
+		# Clear screen if answer is true
+		clear()
+		
+		# Update score
+		user_score += 1
 
-	answer_is_true = False
+		# remove the first celebrity
+		celebrity_list.pop(0)
+
+		# Add a randomly chosen celebrity to the celebrity list for the game
+		celebrity_list.append(get_celebrity(data))
+	else:
+		answer_is_true = False
