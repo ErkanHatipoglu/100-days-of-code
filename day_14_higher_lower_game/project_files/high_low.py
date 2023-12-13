@@ -43,6 +43,15 @@ def display_celebrity(celebrity_dict, list_order):
     order = 'Compare A' if list_order == 0 else 'Against B'
     print(f"{order}: {celebrity_dict['name']}, a {celebrity_dict['description']}, from {celebrity_dict['country']}.")
 
+def compare_followers(c_list):
+	# Test
+	print (f"follower count A: {c_list[0]['follower_count']}, and follower count B: {c_list[1]['follower_count']}")
+
+	if int(c_list[0]['follower_count']) > int(c_list[1]['follower_count']):
+		return('a')
+	else:
+		return('b')
+
 # Adding a randomly chosen celebrity to the celebrity list for the game
 celebrity_list.append(get_celebrity(data))
 
@@ -69,14 +78,8 @@ while answer_is_true:
 	answer = input("Who has more followers? Type 'A' or 'B': ").lower()
 
 	# Compare followers
-	answer_is_true = True
-
-	# Continue if answer is true
-
-	if answer_is_true:
+	if answer == compare_followers(celebrity_list):
+		# Continue if answer is true
 		print("continue")
 
 	answer_is_true = False
-
-
-
