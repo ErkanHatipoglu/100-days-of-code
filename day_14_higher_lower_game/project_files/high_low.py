@@ -8,18 +8,18 @@ clear = lambda: os.system('cls')
 # List to store chosen celebrities for the game
 celebrity_list = []
 
-# User score
+# Initialize user score
 user_score = 0
 
-# Answer
-answer_is_true = True
+# Flag to control game loop
+game_continues = True
 
 def get_celebrity(game_data):
     """
     Randomly selects a celebrity from the given game data.
 
     Parameters:
-    game_data (list): A list of dictionaries, where each dictionary contains data about a celebrity.
+    game_data (list): A list of dictionaries, each containing data about a celebrity.
 
     Returns:
     dict: A dictionary containing the selected celebrity's data.
@@ -47,53 +47,53 @@ def display_celebrity(celebrity_dict, list_order):
     print(f"{order}: {celebrity_dict['name']}, a {celebrity_dict['description']}, from {celebrity_dict['country']}.")
 
 def compare_followers(c_list):
-	if int(c_list[0]['follower_count']) > int(c_list[1]['follower_count']):
-		return('a')
-	else:
-		return('b')
+    """
+    Compares follower counts of two celebrities and determines which one has more.
+
+    Parameters:
+    c_list (list): A list containing two celebrity dictionaries.
+
+    Returns:
+    str: 'a' if the first celebrity has more followers, otherwise 'b'.
+    """
+    return 'a' if int(c_list[0]['follower_count']) > int(c_list[1]['follower_count']) else 'b'
 
 # Add a randomly chosen celebrity to the celebrity list for the game
 celebrity_list.append(get_celebrity(data))
 
-while answer_is_true:
-	# Display logo
-	print(logo)
-	
-	# print the score after the first trial
-	if user_score > 0: display_score(user_score)
-	
-	# Display the first celebrity
-	display_celebrity(celebrity_list[0], 0)
+while game_continues:
+    # Display logo
+  print(logo)
 
-	# print VS
-	print(vs)
+  # print the score after the first trial
+  if user_score > 0: display_score(user_score)
 
-	# Add a randomly chosen celebrity to the celebrity list for the game
-	celebrity_list.append(get_celebrity(data))
+  # Display the first celebrity
+  display_celebrity(celebrity_list[0], 0)
 
-	# Display the second celebrity
-	display_celebrity(celebrity_list[1], 1)
-	
-	# Test
-	print (f"follower count A: {celebrity_list[0]['follower_count']}, and follower count B: {celebrity_list[1]['follower_count']}")
+  # print VS
+  print(vs)
 
-	# Get user input
-	answer = input("Who has more followers? Type 'A' or 'B': ").lower()
+  # Add a randomly chosen celebrity to the celebrity list for the game
+  celebrity_list.append(get_celebrity(data))
 
-	# Compare followers
-	if answer == compare_followers(celebrity_list):
-		
-		answer_is_true = True
-		# Clear screen if answer is true
-		clear()
-		
-		# Update score
-		user_score += 1
+  # Display the second celebrity
+  display_celebrity(celebrity_list[1], 1)
 
-		# remove the first celebrity
-		celebrity_list.pop(0)
+  # Test
+  print (f"follower count A: {celebrity_list[0]['follower_count']}, and follower count B: {celebrity_list[1]['follower_count']}")
 
-		# Add a randomly chosen celebrity to the celebrity list for the game
-		celebrity_list.append(get_celebrity(data))
-	else:
-		answer_is_true = False
+  # Get user input
+  answer = input("Who has more followers? Type 'A' or 'B': ").lower()
+
+  # Compare followers and update game state
+  if answer == compare_followers(celebrity_list):
+      game_continues = True
+      clear()
+      user_score += 1
+      celebrity_list.pop(0)
+      celebrity_list.append(get_celebrity(data))
+  else:
+      game_continues = False
+# Display final score
+print(f"Game over! Your final score is: {user_score}")
