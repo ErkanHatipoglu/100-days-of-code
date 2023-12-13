@@ -75,7 +75,13 @@ while game_continues:
   print(vs)
 
   # Add a randomly chosen celebrity to the celebrity list for the game
-  celebrity_list.append(get_celebrity(data))
+  second_celebrity = get_celebrity(data)
+  
+  # If second celebrity is the same with the first one
+  # reselect secon celebrity
+  while second_celebrity['name'] == celebrity_list[0]['name']:
+    second_celebrity = get_celebrity(data)
+  celebrity_list.append(second_celebrity)
 
   # Display the second celebrity
   display_celebrity(celebrity_list[1], 1)
