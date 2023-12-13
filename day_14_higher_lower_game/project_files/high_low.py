@@ -1,8 +1,8 @@
 import random
 from art import logo, vs
 from game_data import data
-# from replit import clear # If you are using replit use this. 
-import os # If you are not using replit use this.
+# from replit import clear # Uncomment this if you are using Repl.it
+import os  # Use this for clearing the screen if not on Repl.it
 clear = lambda: os.system('cls')
 
 # List to store chosen celebrities for the game
@@ -63,42 +63,41 @@ celebrity_list.append(get_celebrity(data))
 
 while game_continues:
     # Display logo
-  print(logo)
+    print(logo)
 
-  # print the score after the first trial
-  if user_score > 0: display_score(user_score)
+    # Print the score after the first trial
+    if user_score > 0:
+        display_score(user_score)
 
-  # Display the first celebrity
-  display_celebrity(celebrity_list[0], 0)
+    # Display the first celebrity
+    display_celebrity(celebrity_list[0], 0)
 
-  # print VS
-  print(vs)
+    # Print VS
+    print(vs)
 
-  # Add a randomly chosen celebrity to the celebrity list for the game
-  second_celebrity = get_celebrity(data)
-  
-  # Ensure the second celebrity is different from the first
-  while second_celebrity['name'] == celebrity_list[0]['name']:
+    # Add a randomly chosen celebrity to the celebrity list for the game
     second_celebrity = get_celebrity(data)
-  celebrity_list.append(second_celebrity)
+  
+    # Ensure the second celebrity is different from the first
+    while second_celebrity['name'] == celebrity_list[0]['name']:
+        second_celebrity = get_celebrity(data)
+    celebrity_list.append(second_celebrity)
 
-  # Display the second celebrity
-  display_celebrity(celebrity_list[1], 1)
+    # Display the second celebrity
+    display_celebrity(celebrity_list[1], 1)
 
-  # Test
-  print (f"follower count A: {celebrity_list[0]['follower_count']}, and follower count B: {celebrity_list[1]['follower_count']}")
+    # Get user input
+    answer = input("Who has more followers? Type 'A' or 'B': ").lower()
 
-  # Get user input
-  answer = input("Who has more followers? Type 'A' or 'B': ").lower()
+    # Compare followers and update game state
+    if answer == compare_followers(celebrity_list):
+        game_continues = True
+        clear()
+        user_score += 1
+        celebrity_list.pop(0)
+        celebrity_list.append(get_celebrity(data))
+    else:
+        game_continues = False
 
-  # Compare followers and update game state
-  if answer == compare_followers(celebrity_list):
-      game_continues = True
-      clear()
-      user_score += 1
-      celebrity_list.pop(0)
-      celebrity_list.append(get_celebrity(data))
-  else:
-      game_continues = False
 # Display final score
 print(f"Game over! Your final score is: {user_score}")
