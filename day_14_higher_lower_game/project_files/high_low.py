@@ -28,14 +28,21 @@ def display_score(score):
     """
 	print(f"You're right! Current score: {score}") 
 
+def display_celebrity(celebrity_dict, list_order):
+	if list_order == 0:
+		order = 'A'
+	else:
+		order = 'B'
+	print(f"Compare {order}: {celebrity_dict['name']}, a {celebrity_dict['description']}, from {celebrity_dict['country']}.")
+
+
 # Adding a randomly chosen celebrity to the celebrity list for display
 celebrity_list.append(get_celebrity(data))
 
 # Test display
-print(celebrity_list)
+display_celebrity(celebrity_list[0], 0)
+
+display_celebrity(celebrity_list[0], 1)
 
 # Test score
 display_score(user_score)
-
-
-
