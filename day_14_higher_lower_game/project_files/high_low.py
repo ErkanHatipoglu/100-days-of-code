@@ -47,9 +47,6 @@ def display_celebrity(celebrity_dict, list_order):
     print(f"{order}: {celebrity_dict['name']}, a {celebrity_dict['description']}, from {celebrity_dict['country']}.")
 
 def compare_followers(c_list):
-	# Test
-	print (f"follower count A: {c_list[0]['follower_count']}, and follower count B: {c_list[1]['follower_count']}")
-
 	if int(c_list[0]['follower_count']) > int(c_list[1]['follower_count']):
 		return('a')
 	else:
@@ -76,6 +73,9 @@ while answer_is_true:
 
 	# Display the second celebrity
 	display_celebrity(celebrity_list[1], 1)
+	
+	# Test
+	print (f"follower count A: {celebrity_list[0]['follower_count']}, and follower count B: {celebrity_list[1]['follower_count']}")
 
 	# Get user input
 	answer = input("Who has more followers? Type 'A' or 'B': ").lower()
