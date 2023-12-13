@@ -5,7 +5,11 @@ from game_data import data
 # List to store chosen celebrities for the game
 celebrity_list = []
 
+# User score
 user_score = 0
+
+# Answer
+answer_is_true = True
 
 def get_celebrity(game_data):
     """
@@ -39,12 +43,40 @@ def display_celebrity(celebrity_dict, list_order):
     order = 'Compare A' if list_order == 0 else 'Against B'
     print(f"{order}: {celebrity_dict['name']}, a {celebrity_dict['description']}, from {celebrity_dict['country']}.")
 
-# Adding a randomly chosen celebrity to the celebrity list for display
+# Adding a randomly chosen celebrity to the celebrity list for the game
 celebrity_list.append(get_celebrity(data))
 
-# Test display
-display_celebrity(celebrity_list[0], 0)
-display_celebrity(celebrity_list[0], 1)
+while answer_is_true:
+	# Display logo
+	print(logo)
+	
+	# print the score after the first trial
+	if user_score > 0: display_score(user_score)
+	
+	# Display the first celebrity
+	display_celebrity(celebrity_list[0], 0)
 
-# Test score
-display_score(user_score)
+	# print VS
+	print(vs)
+
+	# Adding a randomly chosen celebrity to the celebrity list for the game
+	celebrity_list.append(get_celebrity(data))
+
+	# Display the second celebrity
+	display_celebrity(celebrity_list[1], 1)
+
+	# Get user input
+	answer = input("Who has more followers? Type 'A' or 'B': ").lower()
+
+	# Compare followers
+	answer_is_true = True
+
+	# Continue if answer is true
+
+	if answer_is_true:
+		print("continue")
+
+	answer_is_true = False
+
+
+
