@@ -30,10 +30,10 @@ def display_score(score):
 
 def display_celebrity(celebrity_dict, list_order):
 	if list_order == 0:
-		order = 'A'
+		order = 'Compare A'
 	else:
-		order = 'B'
-	print(f"Compare {order}: {celebrity_dict['name']}, a {celebrity_dict['description']}, from {celebrity_dict['country']}.")
+		order = 'Against B'
+	print(f"{order}: {celebrity_dict['name']}, a {celebrity_dict['description']}, from {celebrity_dict['country']}.")
 
 
 # Adding a randomly chosen celebrity to the celebrity list for display
