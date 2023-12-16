@@ -2,7 +2,7 @@
 from a predefined menu, turning the machine off, or getting a report on the current status of resources. The menu
 includes options like espresso, latte, and cappuccino, each with its own ingredients and cost."""
 
-from art import logo  # Importing the 'art' library to use the 'logo' graphic for the virtual coffee machine interface.
+from art import logo  # Importing the 'art' library for the 'logo' graphic.
 
 # Defining the menu for the coffee machine. Each beverage type (espresso, latte, cappuccino) has its specific
 # ingredients and cost.
@@ -39,6 +39,8 @@ resources = {
     "coffee": 100,
 }
 
+total_money = 0  # Tracks the total money accumulated by the coffee machine.
+
 
 def get_user_selection(menu):
     """
@@ -55,17 +57,40 @@ def get_user_selection(menu):
     for key in menu:
         menu_options_str += key + "/"
     formatted_menu_items = menu_options_str.rstrip("/")  # Remove trailing slash for better formatting.
-    return input(f"What would you like? ({formatted_menu_items}): ")
+    return input(f"What would you like? ({formatted_menu_items}): ").lower()
 
 
-# Display the logo of the virtual coffee machine.
-print(logo)
+def display_current_status(current_resources, money):
+    """
+    Displays the current status of resources and money in the coffee machine.
 
-# Initialize variable to store the user's action.
-user_action = ""
+    Args:
+    current_resources (dict): The current quantities of resources (water, milk, coffee) in the machine.
+    money (float): The total amount of money accumulated by the machine.
 
-# Get the user's choice of action from the menu.
-user_action = get_user_selection(MENU)
+    Prints the status of each resource and the total money.
+    """
+    print(f"Water: {current_resources['water']}ml")
+    print(f"Milk: {current_resources['milk']}ml")
+    print(f"Coffee: {current_resources['coffee']}g")
+    print(f"Money: ${money}")
 
-# Display the user's action for confirmation or debugging.
-print(f"User action is: {user_action}")
+
+user_action = ""  # Stores the user's selected action.
+exit_program = False  # Flag to control the main program loop.
+
+while not exit_program:
+    # Main loop for operating the coffee machine. It continues until 'exit_program' is set to True.
+    print(logo)  # Display the logo of the virtual coffee machine.
+
+    user_action = get_user_selection(MENU)  # Get the user's choice of action from the menu.
+    print(f"User action is: {user_action}")  # Display the user's action for confirmation.
+
+    if user_action == 'off':
+        exit_program = True  # Exit the program if the user selects 'off'.
+    elif user_action == 'report':
+        display_current_status(resources, total_money)  # Display the current status.
+    elif user_action in MENU.keys():
+        print('Check Resources')  # Placeholder for resource check.
+    else:
+        print('Wrong Input')  # Inform the user of an incorrect input.
