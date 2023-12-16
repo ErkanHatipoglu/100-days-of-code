@@ -1,3 +1,4 @@
+from art import logo
 MENU = {
     "espresso": {
         "ingredients": {
@@ -29,3 +30,4 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
+print(logo)
