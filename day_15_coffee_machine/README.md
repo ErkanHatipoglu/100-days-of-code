@@ -7,7 +7,7 @@
 
 
 ## Flowchart
-The flowchart of the "Coffee machine" is as follows: 
+The flowchart of the "Coffee Machine" is as follows: 
 
 ## References
 - 
