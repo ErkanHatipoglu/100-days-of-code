@@ -38,7 +38,7 @@ resources = dict(water=300, milk=200, coffee=100)
 total_money = 0  # Tracks the total money accumulated by the coffee machine.
 
 
-def get_user_selection(menu):
+def get_user_choice(menu):
     """
     Prompt the user to choose an action from the menu, which can be selecting a beverage, turning off the machine,
     or getting a report on resources.
@@ -53,7 +53,7 @@ def get_user_selection(menu):
     return input(f"What would you like? ({options}): ").lower()
 
 
-def display_current_status(current_resources, money):
+def display_machine_status(current_resources, money):
     """
     Displays the current status of resources and money in the coffee machine.
 
@@ -113,19 +113,25 @@ print(logo)  # Display the logo of the virtual coffee machine.
 while not exit_program:
     # Main loop for operating the coffee machine. It continues until 'exit_program' is set to True.
 
-    user_action = get_user_selection(MENU)  # Get the user's choice of action from the menu.
+    user_action = get_user_choice(MENU)  # Get the user's choice of action from the menu.
     print(f"User action is: {user_action}")  # Display the user's action for confirmation.
 
     if user_action == 'off':
         print("Closing off. Please wait...")
         exit_program = True  # Exit the program if the user selects 'off'.
     elif user_action == 'report':
-        display_current_status(resources, total_money)  # Display the current status.
+        display_machine_status(resources, total_money)  # Display the current status.
     elif user_action in MENU.keys():
         sufficient_resources = check_resources(user_action, resources, MENU)
         print(f"sufficient_resources: {sufficient_resources}")  # Test
-        print('Process Coins')  # Placeholder for coin process.
-        print('Check Transaction')  # Placeholder for transaction check.
-        print('Make Coffee')  # Placeholder for making coffee.
+
+        # TODO: Implement coin processing functionality.
+        print('Process Coins')
+
+        # TODO: Implement transaction verification.
+        print('Check Transaction')
+
+        # TODO: Implement coffee making process.
+        print('Make Coffee')
     else:
         print('Wrong Input')  # Inform the user of an incorrect input.
