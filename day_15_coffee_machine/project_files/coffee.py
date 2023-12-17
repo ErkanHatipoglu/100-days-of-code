@@ -37,6 +37,9 @@ resources = dict(water=300, milk=200, coffee=100)
 
 total_money = 0  # Tracks the total money accumulated by the coffee machine.
 
+coin_values = dict(quarters=0.25, dimes=0.10, nickels=0.05, pennies=0.01)  # Denominations of coins and their
+# respective values.
+
 
 def get_user_choice(menu):
     """
@@ -106,6 +109,24 @@ def check_resources(beverage, available_resources, menu):
         return True
 
 
+def process_coins(coin_dict):
+    """
+    Calculates the total amount of money inserted by the user based on the coin denominations.
+
+    Args:
+        coin_dict (dict): Dictionary with coin denominations and their values.
+
+    Returns:
+        float: Total amount of money inserted.
+    """
+
+    total_inserted_money = 0
+    print("Please insert coins.")  # Prompting the user to insert coins for payment.
+    for key in coin_dict:
+        total_inserted_money += coin_dict[key] * float(input(f"how many {key}?: "))
+    return total_inserted_money
+
+
 user_action = ""  # Stores the user's selected action.
 exit_program = False  # Flag to control the main program loop.
 print(logo)  # Display the logo of the virtual coffee machine.
@@ -114,7 +135,6 @@ while not exit_program:
     # Main loop for operating the coffee machine. It continues until 'exit_program' is set to True.
 
     user_action = get_user_choice(MENU)  # Get the user's choice of action from the menu.
-    print(f"User action is: {user_action}")  # Display the user's action for confirmation.
 
     if user_action == 'off':
         print("Closing off. Please wait...")
@@ -123,15 +143,16 @@ while not exit_program:
         display_machine_status(resources, total_money)  # Display the current status.
     elif user_action in MENU.keys():
         sufficient_resources = check_resources(user_action, resources, MENU)
-        print(f"sufficient_resources: {sufficient_resources}")  # Test
 
-        # TODO: Implement coin processing functionality.
-        print('Process Coins')
+        if sufficient_resources:
+            # Implement coin processing functionality.
+            total_inserted_amount = process_coins(coin_values)
+            print(f"money: ${total_inserted_amount}")
 
-        # TODO: Implement transaction verification.
-        print('Check Transaction')
+            # TODO: Implement transaction verification.
+            print('Check Transaction')
 
-        # TODO: Implement coffee making process.
-        print('Make Coffee')
+            # TODO: Implement coffee making process.
+            print('Make Coffee')
     else:
         print('Wrong Input')  # Inform the user of an incorrect input.
