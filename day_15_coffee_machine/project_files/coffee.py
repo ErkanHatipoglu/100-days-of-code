@@ -38,6 +38,8 @@ resources = dict(water=300, milk=200, coffee=100)
 total_money = 0  # Tracks the total money accumulated by the coffee machine.
 
 coin_values = dict(quarters=0.25, dimes=0.10, nickels=0.05, pennies=0.01)  # Denominations of coins and their
+
+
 # respective values.
 
 
@@ -127,7 +129,7 @@ def process_coins(coin_dict):
     return total_inserted_money
 
 
-def check_transaction (inserted_money, beverage_price):
+def check_transaction(inserted_money, beverage_price):
     """
     Checks if the inserted amount of money is sufficient to purchase the selected beverage.
 
@@ -144,8 +146,24 @@ def check_transaction (inserted_money, beverage_price):
     elif inserted_money == beverage_price:
         return True
     else:
-        print(f"Here is ${round((inserted_money-beverage_price),2)} dollars in change.")
+        print(f"Here is ${round((inserted_money - beverage_price), 2)} dollars in change.")
         return True
+
+
+def make_coffee(available_resources, selected_beverage, menu):
+    """
+    Prepares the selected beverage by deducting the required resources.
+
+    Args:
+        available_resources (dict): Current quantities of resources in the machine.
+        selected_beverage (str): The beverage chosen by the user.
+        menu (dict): Details of beverages and their required ingredients.
+
+    Prints a message once the beverage is prepared.
+    """
+    for key in menu[selected_beverage]["ingredients"]:
+        available_resources[key] -= menu[selected_beverage]["ingredients"][key]
+    print(f"Here is your {selected_beverage} ☕️. Enjoy!")
 
 
 user_action = ""  # Stores the user's selected action.
@@ -173,7 +191,9 @@ while not exit_program:
             has_enough_money = check_transaction(total_inserted_amount, MENU[user_action]["cost"])
 
             if has_enough_money:
-                # TODO: Implement coffee making process.
-                print('Make Coffee')
+                total_money += MENU[user_action]["cost"]  # Update total money in the machine
+
+                # Implement coffee making process.
+                make_coffee(resources, user_action, MENU)
     else:
         print('Wrong Input')  # Inform the user of an incorrect input.
