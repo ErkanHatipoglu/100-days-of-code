@@ -127,6 +127,27 @@ def process_coins(coin_dict):
     return total_inserted_money
 
 
+def check_transaction (inserted_money, beverage_price):
+    """
+    Checks if the inserted amount of money is sufficient to purchase the selected beverage.
+
+    Args:
+        inserted_money (float): The total amount of money inserted by the user.
+        beverage_price (float): The cost of the selected beverage.
+
+    Returns:
+        bool: True if the transaction is successful (enough money inserted), False otherwise.
+    """
+    if inserted_money < beverage_price:
+        print("Sorry that's not enough money. Money refunded.")
+        return False
+    elif inserted_money == beverage_price:
+        return True
+    else:
+        print(f"Here is ${round((inserted_money-beverage_price),2)} dollars in change.")
+        return True
+
+
 user_action = ""  # Stores the user's selected action.
 exit_program = False  # Flag to control the main program loop.
 print(logo)  # Display the logo of the virtual coffee machine.
@@ -147,12 +168,12 @@ while not exit_program:
         if sufficient_resources:
             # Implement coin processing functionality.
             total_inserted_amount = process_coins(coin_values)
-            print(f"money: ${total_inserted_amount}")
 
-            # TODO: Implement transaction verification.
-            print('Check Transaction')
+            # Implement transaction verification.
+            has_enough_money = check_transaction(total_inserted_amount, MENU[user_action]["cost"])
 
-            # TODO: Implement coffee making process.
-            print('Make Coffee')
+            if has_enough_money:
+                # TODO: Implement coffee making process.
+                print('Make Coffee')
     else:
         print('Wrong Input')  # Inform the user of an incorrect input.
