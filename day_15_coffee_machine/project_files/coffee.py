@@ -38,8 +38,6 @@ resources = dict(water=300, milk=200, coffee=100)
 total_money = 0  # Tracks the total money accumulated by the coffee machine.
 
 coin_values = dict(quarters=0.25, dimes=0.10, nickels=0.05, pennies=0.01)  # Denominations of coins and their
-
-
 # respective values.
 
 
