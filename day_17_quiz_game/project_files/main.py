@@ -11,13 +11,13 @@ from data import question_data  # Importing quiz data to populate the questions
 question_bank = []
 for dict in question_data:
     # Creating a Question object from each dictionary in question_data
-    my_question = Question(dict["text"], dict["answer"])
-    question_bank.append(my_question)
+    new_question = Question(dict["text"], dict["answer"])
+    question_bank.append(new_question)
 
 # Testing block to display each question and its corresponding answer
 num = 1
-for q in question_bank:
-    print(f"Question-{num}: {q.text} ")
-    print(f"Answer-{num}: {q.answer} ")
+for question in question_bank:
+    print(f"Question-{num}: {question.text} ")
+    print(f"Answer-{num}: {question.answer} ")
     print()
     num += 1
