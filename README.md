@@ -16,7 +16,7 @@ Each project has its dedicated directory. Explore the code and dive into the det
 - [Day 12 - Number Guessing Game](day_12_number_guessing_game)
 - [Day 14 - Higher Lower Game](day_14_higher_lower_game)
 - [Day 15 - Coffee Machine](day_15_coffee_machine)
-- [Day 17 - Quiz Project](day_17_quiz_project)
+- [Day 17 - Quiz Game](day_17_quiz_game)
 
 Feel free to browse the code directly or use the provided links to learn more about each project. Happy coding!
 
