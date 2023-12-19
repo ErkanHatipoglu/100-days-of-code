@@ -1,3 +1,10 @@
+"""
+This module provides data for the quiz application. It contains a list of question dictionaries,
+where each dictionary has a 'text' key for the question and an 'answer' key for its answer.
+"""
+
+# List of question-answer pairs for the quiz
+# Each dictionary contains two keys: 'text' (question) and 'answer' (True/False)
 question_data = [
     {"text": "A slug's blood is green.", "answer": "True"},
     {"text": "The loudest animal is the African Elephant.", "answer": "False"},
