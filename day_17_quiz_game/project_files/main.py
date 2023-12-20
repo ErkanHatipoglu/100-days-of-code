@@ -1,8 +1,8 @@
 """
 This module serves as the main entry point for the quiz application. It utilizes the
 Question model from 'question_model.py', question data from 'data.py', and the QuizBrain
-class from 'quiz_brain.py' to create a quiz game. It sets up the question bank and starts
-the quiz.
+class from 'quiz_brain.py' to create a quiz game. It sets up the question bank and controls
+the quiz flow.
 """
 
 from question_model import Question  # Importing the Question class to create question objects
@@ -18,4 +18,7 @@ for dict in question_data:
 
 # Initialize the QuizBrain object with the question bank
 quiz_brain = QuizBrain(question_bank)
-quiz_brain.next_question()  # Start the quiz
+
+# Loop through all questions in the quiz
+while quiz_brain.still_has_questions():
+    quiz_brain.next_question()  # Present each question to the user
