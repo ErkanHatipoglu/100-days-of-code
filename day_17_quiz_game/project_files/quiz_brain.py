@@ -28,3 +28,13 @@ class QuizBrain:
 
         # Display the question and prompt for user's answer
         input(f"Q.{self.question_number}: {question_text} (True/False):")
+
+    def still_has_questions(self):
+        """
+        Determines if there are more questions remaining in the quiz.
+
+        Returns:
+            bool: True if more questions are remaining, False otherwise.
+        """
+        # Check if there are more questions in the list
+        return self.question_number < len(self.question_list)
