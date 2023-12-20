@@ -1,11 +1,13 @@
 """
 This module serves as the main entry point for the quiz application. It utilizes the
-Question model from 'question_model.py' and question data from 'data.py' to create
-a list of question objects and display them for testing purposes.
+Question model from 'question_model.py', question data from 'data.py', and the QuizBrain
+class from 'quiz_brain.py' to create a quiz game. It sets up the question bank and starts
+the quiz.
 """
 
 from question_model import Question  # Importing the Question class to create question objects
 from data import question_data  # Importing quiz data to populate the questions
+from quiz_brain import QuizBrain  # Importing the QuizBrain class to manage quiz logic
 
 # Initialize an empty list to store question objects
 question_bank = []
@@ -14,10 +16,6 @@ for dict in question_data:
     new_question = Question(dict["text"], dict["answer"])
     question_bank.append(new_question)
 
-# Testing block to display each question and its corresponding answer
-num = 1
-for question in question_bank:
-    print(f"Question-{num}: {question.text} ")
-    print(f"Answer-{num}: {question.answer} ")
-    print()
-    num += 1
+# Initialize the QuizBrain object with the question bank
+quiz_brain = QuizBrain(question_bank)
+quiz_brain.next_question()  # Start the quiz
