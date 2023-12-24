@@ -10,7 +10,19 @@ def draw_square():
 		turtle.right(90)
 
 
+def draw_dashed_line():
+	for i in range(15):
+	    turtle.forward(10)
+	    turtle.pu()
+	    turtle.forward(10)
+	    turtle.pd()
+
+
+
 draw_square()
+turtle.clear()
+draw_dashed_line()
+
 
 screen = t.Screen()
 screen.exitonclick()
