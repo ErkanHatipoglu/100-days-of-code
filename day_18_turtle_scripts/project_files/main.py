@@ -6,6 +6,13 @@ t.colormode(255)
 
 colors = ["brown", "blue", "green", "red", "cyan", "orange", "deeppink"]
 angles = [0, 90, 180, 270]
+hirst_colors = [(196, 162, 106), (67, 90, 125), (141, 168, 188), (134, 91, 51), 
+			  (216, 206, 127), (145, 63, 87), (32, 39, 64), (188, 143, 159),
+			  (75, 15, 33), (129, 28, 54), (137, 182, 145), (163, 154, 54),
+			  (43, 55, 102), (177, 97, 109), (52, 37, 28), (62, 120, 106),
+			  (101, 123, 165), (219, 176, 186), (164, 202, 210),
+			  (86, 146, 157), (92, 150, 101), (185, 106, 83), (174, 206, 170),
+			  (77, 68, 41), (180, 189, 211), (35, 58, 57)]
 
 def draw_square():
 	for i in range(4):
@@ -56,6 +63,17 @@ def draw_spirograph():
 		turtle.setheading(4*angle)
 		turtle.circle(100)
 
+def draw_like_damien_hirst():
+	turtle.penup()
+	turtle.hideturtle()
+	for i in range(10):
+		turtle.setpos(-150, -150 + i*50)
+		for j in range(10):
+			color = random.choice(hirst_colors)
+			turtle.dot(20, color)
+			turtle.forward(50)
+
+
 draw_square()
 turtle.reset()
 draw_dashed_line()
@@ -65,7 +83,8 @@ turtle.reset()
 random_walk(100)
 turtle.reset()
 draw_spirograph()
-
+turtle.reset()
+draw_like_damien_hirst()
 
 
 
