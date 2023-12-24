@@ -13,6 +13,7 @@
 
 
 ## References
+- [Damien Hirst's Spot Paintings](https://www.myartbroker.com/artist-damien-hirst/articles/damien-hirst-spot-paintings)
 - [Python Documentation](https://docs.python.org/3/)
 - [OpenAI GPT](https://www.openai.com/)
 
