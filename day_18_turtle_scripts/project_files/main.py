@@ -49,6 +49,13 @@ def random_color():
     b = random.randint(0, 255)
     return (r, g, b)
 
+def draw_spirograph():
+	turtle.speed(0)
+	for angle in range(90):
+		turtle.pencolor(random_color())
+		turtle.setheading(4*angle)
+		turtle.circle(100)
+
 draw_square()
 turtle.reset()
 draw_dashed_line()
@@ -56,6 +63,12 @@ turtle.reset()
 draw_shapes()
 turtle.reset()
 random_walk(100)
+turtle.reset()
+draw_spirograph()
+
+
+
+
 
 
 
