@@ -1,4 +1,4 @@
-# Hirst Painting Project
+# Turtle Scripts
 
 ## Overview
 
