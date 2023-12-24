@@ -38,11 +38,16 @@ def random_walk(number_of_steps):
 	turtle.speed(0)
 	for i in range(number_of_steps):
 		direction = random.choice(angles)
-		color = random.choice(colors)
+		color = random_color()
 		turtle.pencolor(color)
 		turtle.right(direction)
 		turtle.forward(50)
 
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return (r, g, b)
 
 draw_square()
 turtle.reset()
