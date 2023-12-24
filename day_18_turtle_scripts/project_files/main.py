@@ -43,19 +43,13 @@ def random_walk(number_of_steps):
 		turtle.right(direction)
 		turtle.forward(50)
 
+
 draw_square()
-turtle.clear()
-turtle.setpos(0,0)
+turtle.reset()
 draw_dashed_line()
-turtle.clear()
-turtle.penup()
-turtle.setpos(0,0)
-turtle.pendown()
+turtle.reset()
 draw_shapes()
-turtle.clear()
-turtle.penup()
-turtle.setpos(0,0)
-turtle.pendown()
+turtle.reset()
 random_walk(100)
 
 
