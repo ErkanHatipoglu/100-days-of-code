@@ -1,9 +1,14 @@
 import random
 import turtle as t
 
+# Turtle graphics setup
 turtle = t.Turtle()
 t.colormode(255)
 
+# Color definitions
+# The hirst_colors list contains colors extracted from an original Damien Hirst painting.
+# These colors were obtained using the colorgram.py package, a Python library for extracting colors from images.
+# More information about colorgram.py can be found at: https://pypi.org/project/colorgram.py/
 colors = ["brown", "blue", "green", "red", "cyan", "orange", "deeppink"]
 angles = [0, 90, 180, 270]
 hirst_colors = [(196, 162, 106), (67, 90, 125), (141, 168, 188), (134, 91, 51), (216, 206, 127), (145, 63, 87),
@@ -14,12 +19,14 @@ hirst_colors = [(196, 162, 106), (67, 90, 125), (141, 168, 188), (134, 91, 51), 
 
 
 def draw_square():
+    """Draws a square using turtle graphics."""
     for i in range(4):
         turtle.forward(100)
         turtle.right(90)
 
 
 def draw_dashed_line():
+    """Draws a dashed line using turtle graphics."""
     for i in range(15):
         turtle.forward(10)
         turtle.pu()
@@ -28,12 +35,14 @@ def draw_dashed_line():
 
 
 def draw_shape(sides):
+    """Draws a shape with a given number of sides."""
     for y in range(sides):
         turtle.forward(100)
         turtle.right(360 / sides)
 
 
 def draw_shapes():
+    """Draws a series of shapes with increasing numbers of sides."""
     for i in range(7):
         turtle.pencolor(colors[i])
         edge_num = i + 3
@@ -41,6 +50,16 @@ def draw_shapes():
 
 
 def random_walk(number_of_steps):
+    """
+    Performs a random walk using turtle graphics.
+
+    The turtle moves a fixed distance in a randomly chosen direction
+    (either 0, 90, 180, or 270 degrees) at each step. The color of the
+    turtle's pen changes randomly at each step as well.
+
+    Args:
+        number_of_steps (int): The number of steps the turtle will take in the random walk.
+    """
     turtle.pensize(15)
     turtle.speed(0)
     for i in range(number_of_steps):
@@ -52,6 +71,7 @@ def random_walk(number_of_steps):
 
 
 def random_color():
+    """Returns a random color."""
     r = random.randint(0, 255)
     g = random.randint(0, 255)
     b = random.randint(0, 255)
@@ -59,6 +79,7 @@ def random_color():
 
 
 def draw_spirograph():
+    """Draws a spirograph using turtle graphics."""
     turtle.speed(0)
     for angle in range(90):
         turtle.pencolor(random_color())
@@ -67,6 +88,7 @@ def draw_spirograph():
 
 
 def draw_like_damien_hirst():
+    """Draws a pattern inspired by artist Damien Hirst."""
     turtle.penup()
     turtle.hideturtle()
     for i in range(10):
@@ -77,6 +99,7 @@ def draw_like_damien_hirst():
             turtle.forward(50)
 
 
+# Drawing different shapes and patterns
 draw_square()
 turtle.reset()
 draw_dashed_line()
@@ -89,5 +112,6 @@ draw_spirograph()
 turtle.reset()
 draw_like_damien_hirst()
 
+# Exit condition for turtle graphics window
 screen = t.Screen()
 screen.exitonclick()
