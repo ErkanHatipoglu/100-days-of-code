@@ -5,6 +5,7 @@ turtle = t.Turtle()
 t.colormode(255)
 
 colors = ["brown", "blue", "green", "red", "cyan", "orange", "deeppink"]
+angles = [0, 90, 180, 270]
 
 def draw_square():
 	for i in range(4):
@@ -32,6 +33,16 @@ def draw_shapes():
 		edge_num = i + 3
 		draw_shape(edge_num)
 
+def random_walk(number_of_steps):
+	turtle.pensize(15)
+	turtle.speed(0)
+	for i in range(number_of_steps):
+		direction = random.choice(angles)
+		color = random.choice(colors)
+		turtle.pencolor(color)
+		turtle.right(direction)
+		turtle.forward(50)
+
 draw_square()
 turtle.clear()
 turtle.setpos(0,0)
@@ -41,6 +52,14 @@ turtle.penup()
 turtle.setpos(0,0)
 turtle.pendown()
 draw_shapes()
+turtle.clear()
+turtle.penup()
+turtle.setpos(0,0)
+turtle.pendown()
+random_walk(100)
+
+
+
 
 
 
