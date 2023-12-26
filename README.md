@@ -18,6 +18,7 @@ Each project has its dedicated directory. Explore the code and dive into the det
 - [Day 15 - Coffee Machine](day_15_coffee_machine)
 - [Day 17 - Quiz Game](day_17_quiz_game)
 - [Day 18 - Turtle Scripts](day_18_turtle_scripts)
+- [Day 19 - Turtle Race](day_19_turtle_race)
 
 Feel free to browse the code directly or use the provided links to learn more about each project. Happy coding!
 
