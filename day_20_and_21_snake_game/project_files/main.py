@@ -6,7 +6,7 @@ from snake import Snake
 SNAKE_BODY_PARTS = 3
 SNAKE_STARTING_X = 0
 SNAKE_STARTING_Y = 0
-SNAKE_PART_DIM = (20, 20)
+
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -16,8 +16,7 @@ screen.tracer(0)
 
 game_over = False
 
-snake = Snake(length=SNAKE_BODY_PARTS, x_position=SNAKE_STARTING_X, y_position=SNAKE_STARTING_Y,
-              part_dimensions=SNAKE_PART_DIM)
+snake = Snake(length=SNAKE_BODY_PARTS, x_position=SNAKE_STARTING_X, y_position=SNAKE_STARTING_Y)
 screen.update()
 
 while not game_over:
