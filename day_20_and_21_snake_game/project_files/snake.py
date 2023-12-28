@@ -8,6 +8,7 @@ class Snake:
     def __init__(self, length=3, x_position=0, y_position=0):
         self.snake = []
         self.create_snake(length, x_position, y_position)
+        self.head = self.snake[0]
 
     def create_snake(self, length, x_position, y_position):
         for order in range(length):
@@ -25,16 +26,16 @@ class Snake:
             x_pos = self.snake[part_number - 1].xcor()
             y_pos = self.snake[part_number - 1].ycor()
             self.snake[part_number].goto(x_pos, y_pos)
-        self.snake[0].forward(SPEED)
+        self.head.forward(SPEED)
 
     def up(self):
-        self.snake[0].setheading(90)
+        self.head.setheading(90)
 
     def down(self):
-        self.snake[0].setheading(270)
+        self.head.setheading(270)
 
     def left(self):
-        self.snake[0].setheading(180)
+        self.head.setheading(180)
 
     def right(self):
-        self.snake[0].setheading(0)
+        self.head.setheading(0)
