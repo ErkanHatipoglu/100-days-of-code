@@ -17,7 +17,13 @@ screen.tracer(0)
 game_over = False
 
 snake = Snake(length=SNAKE_BODY_PARTS, x_position=SNAKE_STARTING_X, y_position=SNAKE_STARTING_Y)
-screen.update()
+
+screen.listen()
+
+screen.onkey(snake.up,"Up")
+screen.onkey(snake.down,"Down")
+screen.onkey(snake.left,"Left")
+screen.onkey(snake.right,"Right")
 
 while not game_over:
     time.sleep(0.1)
