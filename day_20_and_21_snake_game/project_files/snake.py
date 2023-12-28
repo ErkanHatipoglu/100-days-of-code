@@ -26,3 +26,15 @@ class Snake:
             y_pos = self.snake[part_number - 1].ycor()
             self.snake[part_number].goto(x_pos, y_pos)
         self.snake[0].forward(SPEED)
+
+    def up(self):
+        self.snake[0].setheading(90)
+
+    def down(self):
+        self.snake[0].setheading(270)
+
+    def left(self):
+        self.snake[0].setheading(180)
+
+    def right(self):
+        self.snake[0].setheading(0)
