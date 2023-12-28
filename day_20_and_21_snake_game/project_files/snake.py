@@ -1,15 +1,23 @@
 from turtle import Turtle
 
+SNAKE_PART_DIM = (20, 20)
+
 
 class Snake:
-    def __init__(self, length=3, x_position=0, y_position=0, part_dimensions=(20, 20)):
+    def __init__(self, length=3, x_position=0, y_position=0):
         self.snake = []
-        for order in range(length):
+        self.length = length
+        self.x_position = x_position
+        self.y_position = y_position
+        self.create_snake()
+
+    def create_snake(self):
+        for order in range(self.length):
             s_part = Turtle("square")
             s_part.penup()
             s_part.color("white")
-            s_part.setx(x_position - (part_dimensions[0] * order))
-            s_part.sety(y_position)
+            s_part.setx(self.x_position - (SNAKE_PART_DIM[0] * order))
+            s_part.sety(self.y_position)
             self.snake.append(s_part)
             self.snake[0].color("red")
 
