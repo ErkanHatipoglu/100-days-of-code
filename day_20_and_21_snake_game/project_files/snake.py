@@ -1,6 +1,7 @@
 from turtle import Turtle
 
 SNAKE_PART_DIM = (20, 20)
+SPEED = 20
 
 
 class Snake:
@@ -24,4 +25,4 @@ class Snake:
             x_pos = self.snake[part_number - 1].xcor()
             y_pos = self.snake[part_number - 1].ycor()
             self.snake[part_number].goto(x_pos, y_pos)
-        self.snake[0].forward(20)
+        self.snake[0].forward(SPEED)
