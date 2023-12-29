@@ -16,12 +16,7 @@ class Snake:
 
     def create_snake(self, length, x_position, y_position):
         for order in range(length):
-            s_part = Turtle("square")
-            s_part.penup()
-            s_part.color("white")
-            s_part.setx(x_position - (SNAKE_PART_DIM[0] * order))
-            s_part.sety(y_position)
-            self.snake.append(s_part)
+            self.grow_up(x_position - (SNAKE_PART_DIM[0] * order), y_position)
             self.snake[0].color("red")
 
     def move(self):
@@ -47,3 +42,11 @@ class Snake:
     def right(self):
         if not self.head.heading() == LEFT:
             self.head.setheading(RIGHT)
+
+    def grow_up(self, x_pos, y_pos):
+        s_part = Turtle("square")
+        s_part.penup()
+        s_part.color("white")
+        s_part.setx(x_pos)
+        s_part.sety(y_pos)
+        self.snake.append(s_part)
