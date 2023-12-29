@@ -3,6 +3,8 @@ from turtle import Turtle
 X_POSITION = -25
 Y_POSITION = 280
 FONT = ('Arial', 12, 'bold')
+X_END = -25
+Y_END = 0
 
 
 class Scoreboard(Turtle):
@@ -22,3 +24,7 @@ class Scoreboard(Turtle):
         self.score += 1
         self.clear()
         self.write_score()
+
+    def game_over(self):
+        self.goto(x=X_END, y=Y_END)
+        self.write(arg="GAME OVER!", move=False, font=FONT)
