@@ -44,5 +44,9 @@ while not game_over:
     if snake.head.xcor() >= X_BOUNDARY or snake.head.xcor() <= -X_BOUNDARY or snake.head.ycor() >= Y_BOUNDARY or snake.head.ycor() <= -Y_BOUNDARY:
         game_over = True
         scoreboard.game_over()
+    for part in snake.snake[1:]:
+        if snake.head.distance(part) < 10:
+            game_over = True
+            scoreboard.game_over()
 
 screen.exitonclick()
