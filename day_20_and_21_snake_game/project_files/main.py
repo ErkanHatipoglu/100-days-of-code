@@ -2,15 +2,19 @@ import time
 from turtle import Screen
 
 from food import Food
-from snake import Snake
 from scoreboard import Scoreboard
+from snake import Snake
 
 SNAKE_BODY_PARTS = 3
 SNAKE_STARTING_X = 0
 SNAKE_STARTING_Y = 0
+WIDTH = 600
+HEIGHT = 600
+X_BOUNDARY = 300
+Y_BOUNDARY = 300
 
 screen = Screen()
-screen.setup(width=600, height=600)
+screen.setup(width=WIDTH, height=HEIGHT)
 screen.bgcolor("black")
 screen.title("The Incredible Snake Game")
 screen.tracer(0)
@@ -36,5 +40,8 @@ while not game_over:
     if snake.head.distance(food) < 15:
         food.teleport()
         scoreboard.increase_score()
+    if snake.head.xcor() >= X_BOUNDARY or snake.head.xcor() <= -X_BOUNDARY or snake.head.ycor() >= Y_BOUNDARY or snake.head.ycor() <= -Y_BOUNDARY:
+        game_over = True
+        scoreboard.game_over()
 
 screen.exitonclick()
