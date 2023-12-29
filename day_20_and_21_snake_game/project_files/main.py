@@ -40,6 +40,7 @@ while not game_over:
     if snake.head.distance(food) < 15:
         food.teleport()
         scoreboard.increase_score()
+        snake.grow_up(snake.snake[-1].xcor(), snake.snake[-1].ycor())
     if snake.head.xcor() >= X_BOUNDARY or snake.head.xcor() <= -X_BOUNDARY or snake.head.ycor() >= Y_BOUNDARY or snake.head.ycor() <= -Y_BOUNDARY:
         game_over = True
         scoreboard.game_over()
