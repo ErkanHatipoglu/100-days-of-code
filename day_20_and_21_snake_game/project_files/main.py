@@ -3,6 +3,7 @@ from turtle import Screen
 
 from food import Food
 from snake import Snake
+from scoreboard import Scoreboard
 
 SNAKE_BODY_PARTS = 3
 SNAKE_STARTING_X = 0
@@ -18,6 +19,7 @@ game_over = False
 
 snake = Snake(length=SNAKE_BODY_PARTS, x_position=SNAKE_STARTING_X, y_position=SNAKE_STARTING_Y)
 food = Food()
+scoreboard = Scoreboard()
 
 screen.listen()
 
@@ -33,5 +35,6 @@ while not game_over:
 
     if snake.head.distance(food) < 15:
         food.teleport()
+        scoreboard.increase_score()
 
 screen.exitonclick()
