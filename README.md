@@ -4,7 +4,7 @@ Welcome to my repository! This collection showcases my journey through the "[100
 
 ## Project Categories
 
-### Beginner Projects
+### [Beginner Projects](beginner_projects/)
 - [Day 08 - Caesar Cipher](beginner_projects/day_8_caesar_cipher)
 - [Day 09 - Secret Auction](beginner_projects/day_9_secret_auction)
 - [Day 10 - Calculator App](beginner_projects/day_10_calculator_app)
@@ -12,17 +12,17 @@ Welcome to my repository! This collection showcases my journey through the "[100
 - [Day 12 - Number Guessing Game](beginner_projects/day_12_number_guessing_game)
 - [Day 14 - Higher Lower Game](beginner_projects/day_14_higher_lower_game)
 
-### Intermediate Projects
+### [Intermediate Projects](intermediate_projects/)
 - [Day 15 - Coffee Machine](intermediate_projects/day_15_coffee_machine)
 - [Day 17 - Quiz Game](intermediate_projects/day_17_quiz_game)
 - [Day 18 - Turtle Scripts](intermediate_projects/day_18_turtle_scripts)
 - [Day 19 - Turtle Race](intermediate_projects/day_19_turtle_race)
 - [Day 20 and Day 21 - Snake Game](intermediate_projects/day_20_and_21_snake_game)
 
-### Advanced Projects
+### [Advanced Projects](advanced_projects/)
 - None yet.
 
-### Portfolio Projects
+### [Portfolio Projects](portfolio_projects/)
 - None yet.
 
 ## Repository Overview
@@ -41,8 +41,6 @@ I'm deeply passionate about programming, with a keen interest in Python. My jour
 Happy coding!
 
 *Erkan Hatipoglu*
-
-
 
 
 
