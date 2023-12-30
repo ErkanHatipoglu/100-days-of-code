@@ -1,27 +1,44 @@
-# 100 Days of Code
+# 100 Days of Code - Python Projects
 
-Welcome to my repository! Here, you'll find a collection of Python projects completed during the "[100 Days of Code: The Complete Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/)" on Udemy, instructed by [Dr. Angela Yu](https://www.udemy.com/course/100-days-of-code/#instructor-1).
+Welcome to my repository! This collection showcases my journey through the "[100 Days of Code: The Complete Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/)" on Udemy, instructed by [Dr. Angela Yu](https://www.udemy.com/course/100-days-of-code/#instructor-1). Here, you'll find Python projects categorized by complexity, reflecting my progress and learning.
 
+## Project Categories
 
-# Project Structure
+### Beginner Projects
+- [Day 08 - Caesar Cipher](beginner_projects/day_8_caesar_cipher)
+- [Day 09 - Secret Auction](beginner_projects/day_9_secret_auction)
+- [Day 10 - Calculator App](beginner_projects/day_10_calculator_app)
+- [Day 11 - Blackjack Game](beginner_projects/day_11_blackjack_game)
+- [Day 12 - Number Guessing Game](beginner_projects/day_12_number_guessing_game)
+- [Day 14 - Higher Lower Game](beginner_projects/day_14_higher_lower_game)
 
-Each project has its dedicated directory. Explore the code and dive into the details of each project. Check out the accompanying **Readme** files for additional information and insights.
+### Intermediate Projects
+- [Day 15 - Coffee Machine](intermediate_projects/day_15_coffee_machine)
+- [Day 17 - Quiz Game](intermediate_projects/day_17_quiz_game)
+- [Day 18 - Turtle Scripts](intermediate_projects/day_18_turtle_scripts)
+- [Day 19 - Turtle Race](intermediate_projects/day_19_turtle_race)
+- [Day 20 and Day 21 - Snake Game](intermediate_projects/day_20_and_21_snake_game)
 
-# Project List
+### Advanced Projects
+- None yet.
 
-- [Day 08 - Caesar Cipher](day_8_caesar_cipher)
-- [Day 09 - Secret Auction](day_9_secret_auction)
-- [Day 10 - Calculator App](day_10_calculator_app)
-- [Day 11 - Blackjack Game](day_11_blackjack_game)
-- [Day 12 - Number Guessing Game](day_12_number_guessing_game)
-- [Day 14 - Higher Lower Game](day_14_higher_lower_game)
-- [Day 15 - Coffee Machine](day_15_coffee_machine)
-- [Day 17 - Quiz Game](day_17_quiz_game)
-- [Day 18 - Turtle Scripts](day_18_turtle_scripts)
-- [Day 19 - Turtle Race](day_19_turtle_race)
-- [Day 20 and Day 21 - Snake Game](day_20_and_21_snake_game)
+### Portfolio Projects
+- None yet.
 
-Feel free to browse the code directly or use the provided links to learn more about each project. Happy coding!
+## Repository Overview
+Each project folder contains the source code, a dedicated README, and other supplementary materials. The projects demonstrate a range of skills from basic syntax and logic to more complex programming concepts.
+
+## Acknowledgements
+- Dr. Angela Yu, for her engaging and comprehensive teaching on Udemy.
+- ChatGPT, for assistance in structuring this repository, enhancing READMEs, and guiding on code comments and docstrings.
+
+## About Me
+I'm deeply passionate about programming, with a keen interest in Python. My journey through these projects reflects a commitment to continuous learning and personal growth. I enjoy exploring the intersections of technology, creativity, and problem-solving in my coding endeavors.
+
+Happy coding!
+
+*Erkan Hatipoglu*
+
 
 
 
