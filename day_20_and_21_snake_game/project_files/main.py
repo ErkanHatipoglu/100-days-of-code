@@ -1,3 +1,17 @@
+"""
+Snake Game
+
+This is the main module of the Snake Game project. It brings together all components of the game
+like the snake, food, and scoreboard and contains the main game loop. The module sets up the game
+window, handles the game logic, and controls the game flow.
+
+The game is a simple implementation of the classic Snake game using Python's Turtle graphics library.
+Players control a snake, guiding it to eat food and avoiding collision with the walls or its tail.
+
+Author: [Erkan Hatipoglu]
+Date: [30.12.2023]
+"""
+
 import time
 from turtle import Screen
 
@@ -50,8 +64,7 @@ while not game_over:
         snake.grow_up(snake.snake[-1].xcor(), snake.snake[-1].ycor())  # Grow the snake
 
     # Check for collision with the boundary
-    if snake.head.xcor() >= X_BOUNDARY or snake.head.xcor() <= -X_BOUNDARY or \
-       snake.head.ycor() >= Y_BOUNDARY or snake.head.ycor() <= -Y_BOUNDARY:
+    if snake.head.xcor() >= X_BOUNDARY or snake.head.xcor() <= -X_BOUNDARY or snake.head.ycor() >= Y_BOUNDARY or snake.head.ycor() <= -Y_BOUNDARY:
         game_over = True
         scoreboard.game_over()  # Display game over message
 
