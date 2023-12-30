@@ -19,6 +19,7 @@ Each project has its dedicated directory. Explore the code and dive into the det
 - [Day 17 - Quiz Game](day_17_quiz_game)
 - [Day 18 - Turtle Scripts](day_18_turtle_scripts)
 - [Day 19 - Turtle Race](day_19_turtle_race)
+- [Day 20 and Day 21 - Snake Game](day_20_and_21_snake_game)
 
 Feel free to browse the code directly or use the provided links to learn more about each project. Happy coding!
 
