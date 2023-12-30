@@ -28,6 +28,9 @@ Welcome to my repository! This collection showcases my journey through the "[100
 ## Repository Overview
 Each project folder contains the source code, a dedicated README, and other supplementary materials. The projects demonstrate a range of skills from basic syntax and logic to more complex programming concepts.
 
+## Current Progress
+This repository is a living document, continuously evolving as I advance through my coding journey. Projects and content will be regularly updated and expanded as I complete more stages of the "100 Days of Code" challenge and explore new areas of Python programming.
+
 ## Acknowledgements
 - Dr. Angela Yu, for her engaging and comprehensive teaching on Udemy.
 - ChatGPT, for assistance in structuring this repository, enhancing READMEs, and guiding on code comments and docstrings.
