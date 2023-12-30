@@ -4,6 +4,9 @@
 import random
 from turtle import Turtle
 
+# Constant for the food boundaries
+BOUNDARY = 280 # Screen boundary for food object.
+
 class Food(Turtle):
     """
     Represents the food in the Snake game, inheriting from the Turtle class.
@@ -30,6 +33,6 @@ class Food(Turtle):
         Randomly generates X and Y coordinates within the screen boundaries
         and moves the food to that position.
         """
-        x_position = random.randint(-280, 280)  # Random X coordinate within screen bounds
-        y_position = random.randint(-280, 280)  # Random Y coordinate within screen bounds
+        x_position = random.randint(-BOUNDARY, BOUNDARY)  # Random X coordinate within screen bounds
+        y_position = random.randint(-BOUNDARY, BOUNDARY)  # Random Y coordinate within screen bounds
         self.goto(x_position, y_position)  # Move the food to the random position
