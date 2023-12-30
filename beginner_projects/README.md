@@ -20,3 +20,5 @@ These projects focus on solidifying basic programming concepts such as variables
 Thank you for exploring my learning journey in Python programming!
 
 *Erkan Hatipoglu*
+
+[Back to main page](https://github.com/ErkanHatipoglu/100-days-of-code)
