@@ -20,4 +20,4 @@ The flowchart of the "Number Guessing Game" is as follows:
 - [A Guessing Game - Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms/intro-to-algorithms/a/a-guessing-game)
 - [OpenAI GPT](https://www.openai.com/)
 
-[Back to main page](https://github.com/ErkanHatipoglu/100-days-of-code)
+[<< Back to Beginners Projects](https://github.com/ErkanHatipoglu/100-days-of-code/tree/main/beginner_projects) | [Back to Main Page >>](https://github.com/ErkanHatipoglu/100-days-of-code)
