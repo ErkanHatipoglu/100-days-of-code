@@ -4,11 +4,11 @@ Welcome to the `intermediate_projects` section of my "100 Days of Code" journey.
 
 ## Projects Overview
 
-- **Day 15 - Coffee Machine**: Simulating a coffee machine using object-oriented programming.
-- **Day 17 - Quiz Game**: Implementing a quiz game that uses data structures and file handling.
-- **Day 18 - Turtle Scripts**: Creative coding using the Turtle graphics library.
-- **Day 19 - Turtle Race**: A race simulation game using the Turtle module.
-- **Day 20 and Day 21 - Snake Game**: Creating the classic Snake game, focusing on more advanced Python functionalities.
+- **[Day 15 - Coffee Machine](day_15_coffee_machine)**: Simulating a coffee machine using object-oriented programming.
+- **[Day 17 - Quiz Game](day_17_quiz_game)**: Implementing a quiz game that uses data structures and file handling.
+- **[Day 18 - Turtle Scripts](day_18_turtle_scripts)**: Creative coding using the Turtle graphics library.
+- **[Day 19 - Turtle Race](day_19_turtle_race)**: A race simulation game using the Turtle module.
+- **[Day 20 and Day 21 - Snake Game](day_20_and_21_snake_game)**: Creating the classic Snake game, focusing on more advanced Python functionalities.
 
 Each project folder includes the source code, a dedicated README, and any additional resources used or created during the development of the project.
 
