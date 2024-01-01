@@ -1,5 +1,5 @@
 # Game screen constants 
-SCREEN_WIDTH = 1000
+SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 SCREEN_COLOR = "black"
 SCREEN_TITLE = "The Great Pong Game"
