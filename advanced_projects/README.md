@@ -14,4 +14,4 @@ Thank you for visiting and stay tuned for more!
 
 *Erkan Hatipoglu*
 
-[Back to main page](https://github.com/ErkanHatipoglu/100-days-of-code)
+[<< Back to main page >>](https://github.com/ErkanHatipoglu/100-days-of-code)
