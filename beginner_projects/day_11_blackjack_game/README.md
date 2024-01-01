@@ -21,4 +21,4 @@ The flowchart of the "Blackjack Game" is as follows:
 
 Feel free to explore, modify, and enjoy the game!
 
-[Back to main page](https://github.com/ErkanHatipoglu/100-days-of-code)
+[<< Back to Beginners Projects](https://github.com/ErkanHatipoglu/100-days-of-code/tree/main/beginner_projects) | [Back to Main Page >>](https://github.com/ErkanHatipoglu/100-days-of-code)
