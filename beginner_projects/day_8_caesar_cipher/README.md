@@ -32,6 +32,4 @@ The flowchart of the "Caesar Cipher" is as follows:
 - [Caesar Cipher - Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)
 - [Caesar Cipher - Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/caesar-cipher#) 
 
-### Explore More:
-- [Beginners Projects](https://github.com/ErkanHatipoglu/100-days-of-code/beginner_projects) - Dive into more beginner-friendly projects.
-- [Back to Main Page](https://github.com/ErkanHatipoglu/100-days-of-code) - Explore a wide range of coding projects and challenges.
+[<< Back to Beginners Projects](https://github.com/ErkanHatipoglu/100-days-of-code/beginner_projects) | [Back to Main Page >>](https://github.com/ErkanHatipoglu/100-days-of-code)
