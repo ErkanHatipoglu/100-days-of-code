@@ -18,4 +18,4 @@ The flowchart of the "Higher Lower Game" is as follows:
 - [Try Online](https://www.higherlowergame.com/)
 - [OpenAI GPT](https://www.openai.com/)
 
-[Back to main page](https://github.com/ErkanHatipoglu/100-days-of-code)
+[<< Back to Beginners Projects](https://github.com/ErkanHatipoglu/100-days-of-code/tree/main/beginner_projects) | [Back to Main Page >>](https://github.com/ErkanHatipoglu/100-days-of-code)
