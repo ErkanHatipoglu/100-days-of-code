@@ -28,5 +28,5 @@ To run the scripts:
 - [colorgram.py - Python Package for Extracting Colors from Images](https://pypi.org/project/colorgram.py/)
 - [OpenAI GPT](https://www.openai.com/)
 
-[Back to main page](https://github.com/ErkanHatipoglu/100-days-of-code)
+[<< Back to Intermediate Projects](https://github.com/ErkanHatipoglu/100-days-of-code/tree/main/intermediate_projects) | [Back to Main Page >>](https://github.com/ErkanHatipoglu/100-days-of-code)
 
