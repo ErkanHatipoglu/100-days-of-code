@@ -1,6 +1,7 @@
 from turtle import Screen, Turtle
 
 from constants import *
+from paddle import Paddle
 
 
 def initialize_turtle():
@@ -31,6 +32,8 @@ screen.title(SCREEN_TITLE)  # Set window title
 screen.tracer(0)  # Turn off animation
 
 draw_center_line()
+right_paddle = Paddle(x_pos=RIGHT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
+left_paddle = Paddle(x_pos=LEFT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 
 screen.update()  # Update the screen with changes
 
