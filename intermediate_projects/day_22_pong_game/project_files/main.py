@@ -35,6 +35,18 @@ draw_center_line()
 right_paddle = Paddle(x_pos=RIGHT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 left_paddle = Paddle(x_pos=LEFT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 
-screen.update()  # Update the screen with changes
+# Setup keyboard bindings for snake control
+screen.listen()
+screen.onkey(right_paddle.up, "Up")
+screen.onkey(right_paddle.down, "Down")
+screen.onkey(left_paddle.up, "w")
+screen.onkey(left_paddle.down, "s")
+screen.onkey(left_paddle.up, "W")
+screen.onkey(left_paddle.down, "S")
+
+game_over = False
+
+while not game_over:
+    screen.update()  # Update the screen with changes
 
 screen.exitonclick()
