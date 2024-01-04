@@ -1,8 +1,9 @@
+import time
 from turtle import Screen, Turtle
 
+from ball import Ball
 from constants import *
 from paddle import Paddle
-from ball import Ball
 
 
 def initialize_turtle():
@@ -36,6 +37,7 @@ draw_center_line()
 right_paddle = Paddle(x_pos=RIGHT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 left_paddle = Paddle(x_pos=LEFT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 ball = Ball(x_pos=0, y_pos=0)
+ball.start()
 
 # Setup keyboard bindings for snake control
 screen.listen()
@@ -50,5 +52,11 @@ game_over = False
 
 while not game_over:
     screen.update()  # Update the screen with changes
+    time.sleep(0.02)
+    ball.move()
+    if ball.ycor() > BALL_BOUNCING_BORDER:
+        ball.setheading(-ball.heading())
+    if ball.ycor() < -BALL_BOUNCING_BORDER:
+        ball.setheading(-ball.heading())
 
 screen.exitonclick()
