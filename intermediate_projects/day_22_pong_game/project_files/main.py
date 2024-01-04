@@ -52,8 +52,12 @@ game_over = False
 
 while not game_over:
     screen.update()  # Update the screen with changes
-    time.sleep(0.01)
+    time.sleep(0.05)
     ball.move()
     if ball.ycor() > BALL_BOUNCING_BORDER or ball.ycor() < -BALL_BOUNCING_BORDER:
         ball.bounce_from_wall()
+    if ball.distance(right_paddle) < 50 and ball.xcor() > RIGHT_PADDLE_X_POS - SEGMENT_DIMENSIONS[0]:
+        ball.bounce_from_paddle()
+    if ball.distance(left_paddle) < 50 and ball.xcor() < LEFT_PADDLE_X_POS + SEGMENT_DIMENSIONS[0]:
+        ball.bounce_from_paddle()
 screen.exitonclick()
