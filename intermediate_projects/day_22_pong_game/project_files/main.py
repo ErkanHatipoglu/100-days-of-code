@@ -2,6 +2,7 @@ from turtle import Screen, Turtle
 
 from constants import *
 from paddle import Paddle
+from ball import Ball
 
 
 def initialize_turtle():
@@ -34,6 +35,7 @@ screen.tracer(0)  # Turn off animation
 draw_center_line()
 right_paddle = Paddle(x_pos=RIGHT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 left_paddle = Paddle(x_pos=LEFT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
+ball = Ball(x_pos=0, y_pos=0)
 
 # Setup keyboard bindings for snake control
 screen.listen()
