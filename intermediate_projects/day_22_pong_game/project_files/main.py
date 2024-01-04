@@ -37,12 +37,12 @@ left_paddle = Paddle(x_pos=LEFT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 
 # Setup keyboard bindings for snake control
 screen.listen()
-screen.onkey(right_paddle.up, "Up")
-screen.onkey(right_paddle.down, "Down")
-screen.onkey(left_paddle.up, "w")
-screen.onkey(left_paddle.down, "s")
-screen.onkey(left_paddle.up, "W")
-screen.onkey(left_paddle.down, "S")
+screen.onkeypress(right_paddle.up, "Up")
+screen.onkeypress(right_paddle.down, "Down")
+screen.onkeypress(left_paddle.up, "w")
+screen.onkeypress(left_paddle.down, "s")
+screen.onkeypress(left_paddle.up, "W")
+screen.onkeypress(left_paddle.down, "S")
 
 game_over = False
 
