@@ -19,3 +19,6 @@ class Ball(Turtle):
 
     def move(self):
         self.forward(BALL_SPEED)
+
+    def bounce_from_wall(self):
+        self.setheading(-self.heading())
