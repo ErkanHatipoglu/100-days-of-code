@@ -55,5 +55,5 @@ while not game_over:
     time.sleep(0.01)
     ball.move()
     if ball.ycor() > BALL_BOUNCING_BORDER or ball.ycor() < -BALL_BOUNCING_BORDER:
-        ball.setheading(-ball.heading())
+        ball.bounce_from_wall()
 screen.exitonclick()
