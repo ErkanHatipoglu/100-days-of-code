@@ -52,11 +52,8 @@ game_over = False
 
 while not game_over:
     screen.update()  # Update the screen with changes
-    time.sleep(0.02)
+    time.sleep(0.01)
     ball.move()
-    if ball.ycor() > BALL_BOUNCING_BORDER:
+    if ball.ycor() > BALL_BOUNCING_BORDER or ball.ycor() < -BALL_BOUNCING_BORDER:
         ball.setheading(-ball.heading())
-    if ball.ycor() < -BALL_BOUNCING_BORDER:
-        ball.setheading(-ball.heading())
-
 screen.exitonclick()
