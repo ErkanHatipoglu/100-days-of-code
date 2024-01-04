@@ -22,3 +22,6 @@ class Ball(Turtle):
 
     def bounce_from_wall(self):
         self.setheading(-self.heading())
+
+    def bounce_from_paddle(self):
+        self.setheading(180 - self.heading())
