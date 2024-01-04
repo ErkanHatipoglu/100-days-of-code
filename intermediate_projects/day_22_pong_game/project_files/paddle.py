@@ -6,7 +6,7 @@ from constants import *
 class Paddle(Turtle):
     def __init__(self, x_pos, y_pos):
         super().__init__()
-        self.shape("square")
+        self.shape(PADDLE_SHAPE)
         self.penup()
         self.goto(x_pos, y_pos)
         self.color(PADDLE_COLOR)
