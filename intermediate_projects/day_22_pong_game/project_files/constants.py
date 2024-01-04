@@ -10,6 +10,7 @@ UP = 90
 
 # Paddle constants
 PADDLE_COLOR = "white"
+PADDLE_SHAPE = "square"
 SEGMENT_DIMENSIONS = (20, 20)
 PADDLE_SPEED = 20
 RIGHT_PADDLE_X_POS = 350
