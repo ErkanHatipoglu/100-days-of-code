@@ -5,17 +5,19 @@ from constants import *
 
 
 class Ball(Turtle):
-    def __init__(self, x_pos, y_pos):
+    def __init__(self):
         super().__init__()
         self.shape(BALL_SHAPE)
         self.penup()
-        self.goto(x_pos, y_pos)
         self.color(BALL_COLOR)
         self.fillcolor(BALL_COLOR)
+        self.direction = RIGHT
 
-    def start(self):
-        angle = random.randint(-BALL_STARTING_ANGLE, BALL_STARTING_ANGLE)
+    def start(self, x_pos=0, y_pos=0):
+        self.goto(x_pos, y_pos)
+        angle = random.randint(self.direction - BALL_STARTING_ANGLE_RANGE, self.direction + BALL_STARTING_ANGLE_RANGE)
         self.setheading(angle)
+        self.change_direction()
 
     def move(self):
         self.forward(BALL_SPEED)
@@ -25,3 +27,9 @@ class Ball(Turtle):
 
     def bounce_from_paddle(self):
         self.setheading(180 - self.heading())
+
+    def change_direction(self):
+        if self.direction == RIGHT:
+            self.direction = LEFT
+        else:
+            self.direction = RIGHT
