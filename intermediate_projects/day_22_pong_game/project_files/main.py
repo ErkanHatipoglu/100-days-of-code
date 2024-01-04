@@ -36,8 +36,8 @@ screen.tracer(0)  # Turn off animation
 draw_center_line()
 right_paddle = Paddle(x_pos=RIGHT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 left_paddle = Paddle(x_pos=LEFT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
-ball = Ball(x_pos=0, y_pos=0)
-ball.start()
+ball = Ball()
+ball.start(x_pos=BALL_STARTING_X_POSITION, y_pos=BALL_STARTING_Y_POSITION)
 
 # Setup keyboard bindings for snake control
 screen.listen()
@@ -54,10 +54,12 @@ while not game_over:
     screen.update()  # Update the screen with changes
     time.sleep(0.05)
     ball.move()
-    if ball.ycor() > BALL_BOUNCING_BORDER or ball.ycor() < -BALL_BOUNCING_BORDER:
+    if ball.ycor() > BALL_BOUNCING_WALL_BORDER or ball.ycor() < -BALL_BOUNCING_WALL_BORDER:
         ball.bounce_from_wall()
-    if ball.distance(right_paddle) < 50 and ball.xcor() > RIGHT_PADDLE_X_POS - SEGMENT_DIMENSIONS[0]:
+    if (ball.distance(right_paddle) < 50 and ball.xcor() > RIGHT_PADDLE_X_POS - SEGMENT_DIMENSIONS[0]) or (
+            ball.distance(left_paddle) < 50 and ball.xcor() < LEFT_PADDLE_X_POS + SEGMENT_DIMENSIONS[0]):
         ball.bounce_from_paddle()
-    if ball.distance(left_paddle) < 50 and ball.xcor() < LEFT_PADDLE_X_POS + SEGMENT_DIMENSIONS[0]:
-        ball.bounce_from_paddle()
+    elif ball.xcor() > SCREEN_WIDTH/2 or ball.xcor() < -SCREEN_WIDTH/2:
+        ball.start(x_pos=BALL_STARTING_X_POSITION, y_pos=BALL_STARTING_Y_POSITION)
+
 screen.exitonclick()
