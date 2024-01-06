@@ -9,6 +9,7 @@ Welcome to the `intermediate_projects` section of my "100 Days of Code" journey.
 - **[Day 18 - Turtle Scripts](day_18_turtle_scripts)**: Creative coding using the Turtle graphics library.
 - **[Day 19 - Turtle Race](day_19_turtle_race)**: A race simulation game using the Turtle module.
 - **[Day 20 and Day 21 - Snake Game](day_20_and_21_snake_game)**: Creating the classic Snake game, focusing on more advanced Python functionalities.
+- **[Day 22 - Pong Game](day_22_pong_game)**: A classic Pong game implemented in Python using Turtle Graphics. This project covers basic game development concepts like collision detection, user input handling, and graphical rendering.
 
 Each project folder includes the source code, a dedicated README, and any additional resources used or created during the development of the project.
 
