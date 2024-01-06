@@ -1,32 +1,11 @@
 import time
-from turtle import Screen, Turtle
+from turtle import Screen
 
 from ball import Ball
 from constants import *
+from net import Net
 from paddle import Paddle
 from scoreboard import Scoreboard
-
-
-def initialize_turtle():
-    turtle = Turtle()
-    turtle.hideturtle()
-    turtle.penup()
-    turtle.goto(0, - SCREEN_HEIGHT / 2)
-    turtle.setheading(UP)
-    turtle.pencolor(PEN_COLOR)
-    turtle.pensize(PEN_SIZE)
-    return turtle
-
-
-def draw_center_line():
-    """Draws a dashed line using turtle graphics."""
-    center_line_turtle = initialize_turtle()
-    for i in range(int(SCREEN_HEIGHT / (2 * CENTER_LINE_HEIGHT))):
-        center_line_turtle.forward(CENTER_LINE_HEIGHT)
-        center_line_turtle.pu()
-        center_line_turtle.forward(CENTER_LINE_HEIGHT)
-        center_line_turtle.pd()
-
 
 screen = Screen()
 screen.setup(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
@@ -34,11 +13,12 @@ screen.bgcolor(SCREEN_COLOR)
 screen.title(SCREEN_TITLE)  # Set window title
 screen.tracer(0)  # Turn off animation
 
-draw_center_line()
+net = Net()
+net.draw_net()
 right_paddle = Paddle(x_pos=RIGHT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 left_paddle = Paddle(x_pos=LEFT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 ball = Ball()
-ball.start(x_pos=BALL_STARTING_X_POSITION, y_pos=BALL_STARTING_Y_POSITION)
+ball.start(position=BALL_STARTING_POSITION)
 left_scoreboard = Scoreboard(LEFT_SCOREBOARD_POS)
 right_scoreboard = Scoreboard(RIGHT_SCOREBOARD_POS)
 final_scoreboard = Scoreboard((0, 0))
@@ -68,7 +48,7 @@ while not game_over:
     if ball.xcor() > SCREEN_WIDTH / 2:
         left_scoreboard.increment_score()
         left_scoreboard.update_score()
-        ball.start(x_pos=BALL_STARTING_X_POSITION, y_pos=BALL_STARTING_Y_POSITION)
+        ball.start(position=BALL_STARTING_POSITION)
         if left_scoreboard.score >= MATCH_POINT:
             game_over = True
             final_scoreboard.game_over(message="Left Player Wins!", position=FINAL_SCOREBOARD_LEFT_POS)
@@ -76,7 +56,7 @@ while not game_over:
     if ball.xcor() < -SCREEN_WIDTH / 2:
         right_scoreboard.increment_score()
         right_scoreboard.update_score()
-        ball.start(x_pos=BALL_STARTING_X_POSITION, y_pos=BALL_STARTING_Y_POSITION)
+        ball.start(position=BALL_STARTING_POSITION)
         if right_scoreboard.score >= MATCH_POINT:
             game_over = True
             final_scoreboard.game_over(message="Right Player Wins!", position=FINAL_SCOREBOARD_RIGHT_POS)
