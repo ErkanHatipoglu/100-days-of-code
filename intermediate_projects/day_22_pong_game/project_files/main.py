@@ -10,8 +10,8 @@ from scoreboard import Scoreboard
 screen = Screen()
 screen.setup(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
 screen.bgcolor(SCREEN_COLOR)
-screen.title(SCREEN_TITLE)  # Set window title
-screen.tracer(0)  # Turn off animation
+screen.title(SCREEN_TITLE)
+screen.tracer(0)
 
 net = Net()
 net.draw_net()
@@ -24,25 +24,26 @@ right_scoreboard = Scoreboard(position=RIGHT_SCOREBOARD_POS)
 final_scoreboard = Scoreboard(FINAL_SCOREBOARD_STARTING_POS)
 final_scoreboard.clear()
 
-# Setup keyboard bindings for snake control
 screen.listen()
-screen.onkeypress(right_paddle.up, "Up")
-screen.onkeypress(right_paddle.down, "Down")
-screen.onkeypress(left_paddle.up, "w")
-screen.onkeypress(left_paddle.down, "s")
-screen.onkeypress(left_paddle.up, "W")
-screen.onkeypress(left_paddle.down, "S")
+screen.onkeypress(fun=right_paddle.up, key="Up")
+screen.onkeypress(fun=right_paddle.down, key="Down")
+screen.onkeypress(fun=left_paddle.up, key="w")
+screen.onkeypress(fun=left_paddle.down, key="s")
+screen.onkeypress(fun=left_paddle.up, key="W")
+screen.onkeypress(fun=left_paddle.down, key="S")
 
 game_over = False
 
 while not game_over:
-    screen.update()  # Update the screen with changes
+    screen.update()
     time.sleep(0.05)
     ball.move()
     if ball.ycor() > BALL_BOUNCING_WALL_BORDER or ball.ycor() < -BALL_BOUNCING_WALL_BORDER:
         ball.bounce_from_wall()
-    if (ball.distance(right_paddle) < BALL_PADDLE_MAX_DISTANCE and ball.xcor() > RIGHT_PADDLE_POSITION[0] - SEGMENT_DIMENSIONS[0]) or (
-            ball.distance(left_paddle) < BALL_PADDLE_MAX_DISTANCE and ball.xcor() < LEFT_PADDLE_POSITION[0] + SEGMENT_DIMENSIONS[0]):
+    if (ball.distance(right_paddle) < BALL_PADDLE_MAX_DISTANCE and ball.xcor() > RIGHT_PADDLE_POSITION[0] -
+        SEGMENT_DIMENSIONS[0]) or (
+            ball.distance(left_paddle) < BALL_PADDLE_MAX_DISTANCE and ball.xcor() < LEFT_PADDLE_POSITION[0] +
+            SEGMENT_DIMENSIONS[0]):
         ball.increase_speed()
         ball.bounce_from_paddle()
     if ball.xcor() > SCREEN_WIDTH / 2:
