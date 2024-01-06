@@ -41,7 +41,7 @@ ball = Ball()
 ball.start(x_pos=BALL_STARTING_X_POSITION, y_pos=BALL_STARTING_Y_POSITION)
 left_scoreboard = Scoreboard(LEFT_SCOREBOARD_POS)
 right_scoreboard = Scoreboard(RIGHT_SCOREBOARD_POS)
-final_scoreboard = Scoreboard((0,0))
+final_scoreboard = Scoreboard((0, 0))
 final_scoreboard.clear()
 
 # Setup keyboard bindings for snake control
@@ -63,6 +63,7 @@ while not game_over:
         ball.bounce_from_wall()
     if (ball.distance(right_paddle) < 50 and ball.xcor() > RIGHT_PADDLE_X_POS - SEGMENT_DIMENSIONS[0]) or (
             ball.distance(left_paddle) < 50 and ball.xcor() < LEFT_PADDLE_X_POS + SEGMENT_DIMENSIONS[0]):
+        ball.increase_speed()
         ball.bounce_from_paddle()
     if ball.xcor() > SCREEN_WIDTH / 2:
         left_scoreboard.increment_score()
