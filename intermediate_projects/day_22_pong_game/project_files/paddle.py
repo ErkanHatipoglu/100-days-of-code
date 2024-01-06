@@ -4,11 +4,11 @@ from constants import *
 
 
 class Paddle(Turtle):
-    def __init__(self, x_pos, y_pos):
+    def __init__(self, position):
         super().__init__()
         self.shape(PADDLE_SHAPE)
         self.penup()
-        self.goto(x_pos, y_pos)
+        self.goto(position)
         self.color(PADDLE_COLOR)
         self.shapesize(stretch_wid=WIDTH_STRETCH_CONSTANT, stretch_len=LENGTH_STRETCH_CONSTANT)
 
