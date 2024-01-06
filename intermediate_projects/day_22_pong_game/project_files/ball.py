@@ -14,9 +14,9 @@ class Ball(Turtle):
         self.direction = RIGHT
         self.speed = BALL_SPEED
 
-    def start(self, x_pos=0, y_pos=0):
+    def start(self, position):
         self.speed = BALL_SPEED
-        self.goto(x_pos, y_pos)
+        self.goto(position)
         angle = random.randint(self.direction - BALL_STARTING_ANGLE_RANGE, self.direction + BALL_STARTING_ANGLE_RANGE)
         self.setheading(angle)
         self.change_direction()
