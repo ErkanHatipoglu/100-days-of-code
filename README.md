@@ -18,6 +18,7 @@ Welcome to my repository! This collection showcases my journey through the "[100
 - [Day 18 - Turtle Scripts](intermediate_projects/day_18_turtle_scripts)
 - [Day 19 - Turtle Race](intermediate_projects/day_19_turtle_race)
 - [Day 20 and Day 21 - Snake Game](intermediate_projects/day_20_and_21_snake_game)
+- [Day 22 - Pong Game](intermediate_projects/day_22_pong_game)
 
 ### [Advanced Projects](advanced_projects/)
 - None yet.
