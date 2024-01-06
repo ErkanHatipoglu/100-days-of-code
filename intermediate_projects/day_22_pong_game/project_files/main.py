@@ -15,8 +15,8 @@ screen.tracer(0)  # Turn off animation
 
 net = Net()
 net.draw_net()
-right_paddle = Paddle(x_pos=RIGHT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
-left_paddle = Paddle(x_pos=LEFT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
+right_paddle = Paddle(position=RIGHT_PADDLE_POSITION)
+left_paddle = Paddle(position=LEFT_PADDLE_POSITION)
 ball = Ball()
 ball.start(position=BALL_STARTING_POSITION)
 left_scoreboard = Scoreboard(LEFT_SCOREBOARD_POS)
@@ -41,8 +41,8 @@ while not game_over:
     ball.move()
     if ball.ycor() > BALL_BOUNCING_WALL_BORDER or ball.ycor() < -BALL_BOUNCING_WALL_BORDER:
         ball.bounce_from_wall()
-    if (ball.distance(right_paddle) < 50 and ball.xcor() > RIGHT_PADDLE_X_POS - SEGMENT_DIMENSIONS[0]) or (
-            ball.distance(left_paddle) < 50 and ball.xcor() < LEFT_PADDLE_X_POS + SEGMENT_DIMENSIONS[0]):
+    if (ball.distance(right_paddle) < 50 and ball.xcor() > RIGHT_PADDLE_POSITION[0] - SEGMENT_DIMENSIONS[0]) or (
+            ball.distance(left_paddle) < 50 and ball.xcor() < LEFT_PADDLE_POSITION[0] + SEGMENT_DIMENSIONS[0]):
         ball.increase_speed()
         ball.bounce_from_paddle()
     if ball.xcor() > SCREEN_WIDTH / 2:
