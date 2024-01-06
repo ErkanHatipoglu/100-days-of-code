@@ -1,4 +1,6 @@
-"""main.py for Pong Game. This script is the main file for a Pong game. It sets up the game environment, including the
+"""
+main.py for Pong Game
+This script is the main file for a Pong game. It sets up the game environment, including the
 screen, paddles, ball, and scoreboards. It controls game mechanics like paddle movement, ball bouncing,
 and score tracking. The game loop within this file keeps the game running, updating the positions of game elements
 and checking for win conditions. Player interactions are handled through keyboard inputs for paddle movements. The
