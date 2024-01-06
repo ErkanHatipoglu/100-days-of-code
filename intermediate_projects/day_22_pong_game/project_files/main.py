@@ -4,6 +4,7 @@ from turtle import Screen, Turtle
 from ball import Ball
 from constants import *
 from paddle import Paddle
+from scoreboard import Scoreboard
 
 
 def initialize_turtle():
@@ -38,6 +39,10 @@ right_paddle = Paddle(x_pos=RIGHT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 left_paddle = Paddle(x_pos=LEFT_PADDLE_X_POS, y_pos=PADDLE_Y_POS)
 ball = Ball()
 ball.start(x_pos=BALL_STARTING_X_POSITION, y_pos=BALL_STARTING_Y_POSITION)
+left_scoreboard = Scoreboard(LEFT_SCOREBOARD_POS)
+right_scoreboard = Scoreboard(RIGHT_SCOREBOARD_POS)
+final_scoreboard = Scoreboard((0,0))
+final_scoreboard.clear()
 
 # Setup keyboard bindings for snake control
 screen.listen()
@@ -59,7 +64,20 @@ while not game_over:
     if (ball.distance(right_paddle) < 50 and ball.xcor() > RIGHT_PADDLE_X_POS - SEGMENT_DIMENSIONS[0]) or (
             ball.distance(left_paddle) < 50 and ball.xcor() < LEFT_PADDLE_X_POS + SEGMENT_DIMENSIONS[0]):
         ball.bounce_from_paddle()
-    elif ball.xcor() > SCREEN_WIDTH/2 or ball.xcor() < -SCREEN_WIDTH/2:
+    if ball.xcor() > SCREEN_WIDTH / 2:
+        left_scoreboard.increment_score()
+        left_scoreboard.update_score()
         ball.start(x_pos=BALL_STARTING_X_POSITION, y_pos=BALL_STARTING_Y_POSITION)
+        if left_scoreboard.score >= MATCH_POINT:
+            game_over = True
+            final_scoreboard.game_over(message="Left Player Wins!", position=FINAL_SCOREBOARD_LEFT_POS)
+
+    if ball.xcor() < -SCREEN_WIDTH / 2:
+        right_scoreboard.increment_score()
+        right_scoreboard.update_score()
+        ball.start(x_pos=BALL_STARTING_X_POSITION, y_pos=BALL_STARTING_Y_POSITION)
+        if right_scoreboard.score >= MATCH_POINT:
+            game_over = True
+            final_scoreboard.game_over(message="Right Player Wins!", position=FINAL_SCOREBOARD_RIGHT_POS)
 
 screen.exitonclick()
