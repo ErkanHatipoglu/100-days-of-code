@@ -12,15 +12,17 @@ class Ball(Turtle):
         self.color(BALL_COLOR)
         self.fillcolor(BALL_COLOR)
         self.direction = RIGHT
+        self.speed = BALL_SPEED
 
     def start(self, x_pos=0, y_pos=0):
+        self.speed = BALL_SPEED
         self.goto(x_pos, y_pos)
         angle = random.randint(self.direction - BALL_STARTING_ANGLE_RANGE, self.direction + BALL_STARTING_ANGLE_RANGE)
         self.setheading(angle)
         self.change_direction()
 
     def move(self):
-        self.forward(BALL_SPEED)
+        self.forward(self.speed)
 
     def bounce_from_wall(self):
         self.setheading(-self.heading())
@@ -33,3 +35,6 @@ class Ball(Turtle):
             self.direction = LEFT
         else:
             self.direction = RIGHT
+
+    def increase_speed(self):
+        self.speed += 1
