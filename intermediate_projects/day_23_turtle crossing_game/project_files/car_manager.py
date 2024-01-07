@@ -12,28 +12,32 @@ def generate_position():
     return x_pos, y_pos
 
 
+def generate_car():
+    car = Turtle()
+    car.shape(CAR_SHAPE)
+    car.penup()
+    car.setheading(LEFT)
+    car.goto(generate_position())
+    car.color(random.choice(COLORS))
+    car.shapesize(stretch_wid=WIDTH_STRETCH_CONSTANT, stretch_len=LENGTH_STRETCH_CONSTANT)
+    return car
+
+
 class CarManager:
     def __init__(self):
         self.car_list = []
+        self.car_speed = STARTING_MOVE_DISTANCE
         for count in range(NUMBER_OF_CARS):
-            car = self.generate_car()
+            car = generate_car()
             self.car_list.append(car)
-
-    def generate_car(self):
-        car = Turtle()
-        car.shape(CAR_SHAPE)
-        car.penup()
-        car.setheading(LEFT)
-        car.speed = STARTING_MOVE_DISTANCE
-        car.goto(generate_position())
-        car.color(random.choice(COLORS))
-        car.shapesize(stretch_wid=WIDTH_STRETCH_CONSTANT, stretch_len=LENGTH_STRETCH_CONSTANT)
-        return car
 
     def start_traffic(self):
         for car in self.car_list:
-            if car.xcor() > -SCREEN_WIDTH/2:
-                car.forward(car.speed)
+            if car.xcor() > -SCREEN_WIDTH / 2:
+                car.forward(self.car_speed)
             else:
                 car.goto(generate_position())
-                car.forward(car.speed)
+                car.forward(self.car_speed)
+
+    def increase_speed(self):
+        self.car_speed += MOVE_INCREMENT
