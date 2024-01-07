@@ -30,6 +30,7 @@ while game_is_on:
     if player.ycor() > FINISH_LINE_Y + PLAYER_DIMENSIONS[1]:
         player.restart()
         scoreboard.increment_level()
+        car_manager.increase_speed()
 
 
 # Exit the game when the user clicks the window.
