@@ -33,3 +33,6 @@ CAR_DIMENSIONS = (40, 20)  # Dimensions of player segments
 
 # Scoreboard constants
 FONT = ("Courier", 24, "normal")
+PEN_COLOR = "black"
+SCOREBOARD_POSITION = (-280, 260)
+HOME = (0, 0)
