@@ -12,11 +12,8 @@ class Player(Turtle):
         self.goto(STARTING_POSITION)
 
     def walk(self):
-        if self.ycor() < FINISH_LINE_Y + PLAYER_DIMENSIONS[1]:
-            new_y_pos = self.ycor() + MOVE_DISTANCE
-            self.sety(new_y_pos)
-        else:
-            self.restart()
+        new_y_pos = self.ycor() + MOVE_DISTANCE
+        self.sety(new_y_pos)
 
     def restart(self):
         self.goto(STARTING_POSITION)
