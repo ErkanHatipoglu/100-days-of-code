@@ -32,7 +32,7 @@ class CarManager:
 
     def start_traffic(self):
         for car in self.car_list:
-            if car.xcor() > -300:
+            if car.xcor() > -SCREEN_WIDTH/2:
                 car.forward(car.speed)
             else:
                 car.goto(generate_position())
