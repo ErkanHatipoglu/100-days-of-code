@@ -1,5 +1,4 @@
-FONT = ("Courier", 24, "normal")
-
+from constants import *
 
 class Scoreboard:
     pass

@@ -1,14 +1,19 @@
 import time
 from turtle import Screen
-from player import Player
-from car_manager import CarManager
-from scoreboard import Scoreboard
 
+from constants import *
+
+# Set up the main game screen using Turtle's Screen class.
 screen = Screen()
-screen.setup(width=600, height=600)
-screen.tracer(0)
+screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
+screen.bgcolor(SCREEN_COLOR)  # Setting the background color.
+screen.title(SCREEN_TITLE)  # Setting the window title.
+screen.tracer(0)  # Disabling automatic screen updates for manual control.
 
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
+
+# Exit the game when the user clicks the window.
+screen.exitonclick()
