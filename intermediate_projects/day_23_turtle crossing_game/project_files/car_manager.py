@@ -1,26 +1,6 @@
-import random
-from turtle import Turtle
+from car import Car
 
 from constants import *
-
-
-def generate_position():
-    x_pos_coefficient = random.randint(0, 12)
-    x_pos = CAR_MIN_STARTING_X_POS + X_POSITION_SCALE_FACTOR * x_pos_coefficient * CAR_DIMENSIONS[0]
-    y_pos_coefficient = random.randint(1, 13)
-    y_pos = CAR_MIN_STARTING_Y_POS + Y_POSITION_SCALE_FACTOR * y_pos_coefficient * CAR_DIMENSIONS[1]
-    return x_pos, y_pos
-
-
-def generate_car():
-    car = Turtle()
-    car.shape(CAR_SHAPE)
-    car.penup()
-    car.setheading(LEFT)
-    car.goto(generate_position())
-    car.color(random.choice(COLORS))
-    car.shapesize(stretch_wid=WIDTH_STRETCH_CONSTANT, stretch_len=LENGTH_STRETCH_CONSTANT)
-    return car
 
 
 class CarManager:
@@ -28,7 +8,7 @@ class CarManager:
         self.car_list = []
         self.car_speed = STARTING_MOVE_DISTANCE
         for count in range(NUMBER_OF_CARS):
-            car = generate_car()
+            car = Car()
             self.car_list.append(car)
 
     def start_traffic(self):
@@ -36,7 +16,7 @@ class CarManager:
             if car.xcor() > -SCREEN_WIDTH / 2:
                 car.forward(self.car_speed)
             else:
-                car.goto(generate_position())
+                car.goto(Car.generate_position())
                 car.forward(self.car_speed)
 
     def increase_speed(self):
