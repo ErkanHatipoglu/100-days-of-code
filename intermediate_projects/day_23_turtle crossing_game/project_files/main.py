@@ -27,11 +27,12 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
     car_manager.start_traffic()
+    game_is_on = car_manager.check_collision(player)
     if player.ycor() > FINISH_LINE_Y + PLAYER_DIMENSIONS[1]:
         player.restart()
         scoreboard.increment_level()
         car_manager.increase_speed()
 
-
+scoreboard.game_over()
 # Exit the game when the user clicks the window.
 screen.exitonclick()
