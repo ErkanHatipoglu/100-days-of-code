@@ -30,9 +30,10 @@ CAR_MIN_STARTING_Y_POS = -270
 X_POSITION_SCALE_FACTOR = 1.5
 Y_POSITION_SCALE_FACTOR = 2
 CAR_DIMENSIONS = (40, 20)  # Dimensions of player segments
+COLLISION_DISTANCE = 30
 
 # Scoreboard constants
 FONT = ("Courier", 24, "normal")
 PEN_COLOR = "black"
 SCOREBOARD_POSITION = (-280, 260)
-HOME = (0, 0)
+HOME = (-85, 0)
