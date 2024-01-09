@@ -1,59 +1,51 @@
-# Import necessary modules and classes
-import time
-from turtle import Screen
+from car import Car
 
-from car_manager import CarManager
 from constants import *
-from player import Player
-from scoreboard import Scoreboard
 
-# Set up the main game screen using Turtle's Screen class.
-# Initialize the game screen
-screen = Screen()
-# Set the dimensions of the game screen
-screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
-# Set the background color of the game screen
-screen.bgcolor(SCREEN_COLOR)
-# Set the title of the game window
-screen.title(SCREEN_TITLE)
-# Disable automatic screen updates for manual control
-screen.tracer(0)
 
-# Initialize the player
-player = Player()
-# Initialize the car manager to handle traffic
-car_manager = CarManager()
-# Initialize the scoreboard to display game info
-scoreboard = Scoreboard()
+class CarManager:
+    """
+    Class to manage the behavior of multiple car objects in the game.
+    This includes handling their movement, speed, and collision detection.
+    """
 
-# Listen for keyboard input
-screen.listen()
-# Bind the 'Up' key to player's walk method
-screen.onkeypress(fun=player.walk, key="Up")
+    def __init__(self):
+        """Initializes the CarManager with an empty list of cars and sets the initial car speed."""
+        self.car_list = []  # List to store car objects
+        self.car_speed = STARTING_MOVE_DISTANCE  # Initial speed for the cars
 
-game_is_on = True
-while game_is_on:
-    # Control the game's update rate
-    time.sleep(0.1)
-    # Update the screen with the latest game state
-    screen.update()
+        # Creating the initial set of cars based on NUMBER_OF_CARS constant
+        for count in range(NUMBER_OF_CARS):
+            car = Car()
+            self.car_list.append(car)
 
-    # Move the cars on the screen
-    car_manager.start_traffic()
-    # Check for collision between player and cars and update game status
-    game_is_on = car_manager.check_collision(player)
+    def start_traffic(self):
+        """
+        Moves each car in the car list. If a car goes off-screen, it is reset to a new position.
+        This simulates continuous traffic flow.
+        """
+        for car in self.car_list:
+            if car.xcor() > -SCREEN_WIDTH / 2:
+                car.forward(self.car_speed)
+            else:
+                car.goto(Car.generate_position())  # Reset car position
+                car.forward(self.car_speed)
 
-    # Check if the player has crossed the finish line
-    if player.ycor() > FINISH_LINE_Y + PLAYER_DIMENSIONS[1]:
-        # Restart the player's position
-        player.restart()
-        # Increase the level and update the scoreboard
-        scoreboard.increment_level()
-        # Increase the speed of cars
-        car_manager.increase_speed()
+    def increase_speed(self):
+        """Increases the moving speed of all cars, making the game more challenging."""
+        self.car_speed += MOVE_INCREMENT
 
-# Display the game over message
-scoreboard.game_over()
+    def check_collision(self, player):
+        """
+        Checks if any car in the car list collides with the player.
 
-# Exit the game when the user clicks the window
-screen.exitonclick()
+        Args:
+            player: The player object to check for collision.
+
+        Returns:
+            bool: False if any car collides with the player, True otherwise.
+        """
+        for car in self.car_list:
+            if car.distance(player) < COLLISION_DISTANCE:
+                return False
+        return True
