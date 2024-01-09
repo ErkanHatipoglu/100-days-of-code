@@ -1,29 +1,59 @@
-from car import Car
+# Import necessary modules and classes
+import time
+from turtle import Screen
 
+from car_manager import CarManager
 from constants import *
+from player import Player
+from scoreboard import Scoreboard
 
+# Set up the main game screen using Turtle's Screen class.
+# Initialize the game screen
+screen = Screen()
+# Set the dimensions of the game screen
+screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
+# Set the background color of the game screen
+screen.bgcolor(SCREEN_COLOR)
+# Set the title of the game window
+screen.title(SCREEN_TITLE)
+# Disable automatic screen updates for manual control
+screen.tracer(0)
 
-class CarManager:
-    def __init__(self):
-        self.car_list = []
-        self.car_speed = STARTING_MOVE_DISTANCE
-        for count in range(NUMBER_OF_CARS):
-            car = Car()
-            self.car_list.append(car)
+# Initialize the player
+player = Player()
+# Initialize the car manager to handle traffic
+car_manager = CarManager()
+# Initialize the scoreboard to display game info
+scoreboard = Scoreboard()
 
-    def start_traffic(self):
-        for car in self.car_list:
-            if car.xcor() > -SCREEN_WIDTH / 2:
-                car.forward(self.car_speed)
-            else:
-                car.goto(Car.generate_position())
-                car.forward(self.car_speed)
+# Listen for keyboard input
+screen.listen()
+# Bind the 'Up' key to player's walk method
+screen.onkeypress(fun=player.walk, key="Up")
 
-    def increase_speed(self):
-        self.car_speed += MOVE_INCREMENT
+game_is_on = True
+while game_is_on:
+    # Control the game's update rate
+    time.sleep(0.1)
+    # Update the screen with the latest game state
+    screen.update()
 
-    def check_collision(self, player):
-        for car in self.car_list:
-            if car.distance(player) < COLLISION_DISTANCE:
-                return False
-        return True
+    # Move the cars on the screen
+    car_manager.start_traffic()
+    # Check for collision between player and cars and update game status
+    game_is_on = car_manager.check_collision(player)
+
+    # Check if the player has crossed the finish line
+    if player.ycor() > FINISH_LINE_Y + PLAYER_DIMENSIONS[1]:
+        # Restart the player's position
+        player.restart()
+        # Increase the level and update the scoreboard
+        scoreboard.increment_level()
+        # Increase the speed of cars
+        car_manager.increase_speed()
+
+# Display the game over message
+scoreboard.game_over()
+
+# Exit the game when the user clicks the window
+screen.exitonclick()
