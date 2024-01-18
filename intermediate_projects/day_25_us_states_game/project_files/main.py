@@ -30,6 +30,14 @@ def check_user_answer(answer):
         return answer.lower(), False
 
 
+def display_state(state_name, x_pos, y_pos):
+    state_label_writer = turtle.Turtle()
+    state_label_writer.hideturtle()
+    state_label_writer.penup()
+    state_label_writer.goto(x_pos, y_pos)
+    state_label_writer.write(arg=state_name.title(), move=False)
+
+
 screen = turtle.Screen()
 screen.title("US States Game")
 image = "blank_states_img.gif"
@@ -50,6 +58,7 @@ user_answer, game_over = check_user_answer(user_answer)
 if user_answer in states_dict["state"].values():
     correct_answer_count += 1
     states_dict, x_position, y_position = extract_result(states_dict, user_answer)
+    display_state(user_answer, x_position, y_position)
 
 while not game_over:
     user_answer = screen.textinput(title=f"{correct_answer_count}/{total_state_number} States Correct",
@@ -59,6 +68,7 @@ while not game_over:
     if user_answer in states_dict["state"].values():
         correct_answer_count += 1
         states_dict, x_position, y_position = extract_result(states_dict, user_answer)
+        display_state(user_answer, x_position, y_position)
     if correct_answer_count == total_state_number:
         game_over = True
 
