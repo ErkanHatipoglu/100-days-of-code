@@ -17,7 +17,9 @@ turtle.onscreenclick(get_mouse_click_coordinate)
 states_data = pd.read_csv("50_states.csv")
 print(states_data)  # Test
 
-user_answer = screen.textinput(title="Guess the State", prompt="What's another state's name?")
-print(user_answer)
+game_over = False
+while not game_over:
+    user_answer = screen.textinput(title="Guess the State", prompt="What's another state's name?")
+    print(user_answer)
 
 turtle.mainloop()
