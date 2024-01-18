@@ -21,5 +21,7 @@ game_over = False
 while not game_over:
     user_answer = screen.textinput(title="Guess the State", prompt="What's another state's name?")
     print(user_answer)
+    if user_answer is None:
+        game_over = True
 
 turtle.mainloop()
