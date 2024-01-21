@@ -1,4 +1,4 @@
-# US States Game: Python Dictionary vs. Pandas DataFrame Approaches
+# US States Game: [Python Dictionary](solution_1) vs. [Pandas DataFrame](solution_2) Approaches
 
 This repository hosts two Python implementations ([solution_1](solution_1) and [solution_2](solution_2)) of the US States Game, an interactive educational application designed to help users learn US states in an engaging way. Both versions employ similar functionalities with a subtle difference in the data structure and initial presentation.
 
