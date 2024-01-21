@@ -5,8 +5,9 @@ import pandas as pd
 # Constants for game configuration
 SCREEN_TITLE = "US States Game"
 TEXT_INPUT_PROMPT = "What's another state's name?"
-IMAGE_ADDRESS = "blank_states_img.gif"
-STATES_CSV_FILE_ADDRESS = "50_states.csv"
+IMAGE_FILE_PATH = "blank_states_img.gif"
+INPUT_FILE_PATH = "50_states.csv"
+OUTPUT_FILE_PATH = "states_to_learn.csv"
 NUMBER_OF_STATES = 50
 EXIT_CONDITIONS = [None, "exit", "Exit", "EXIT", "quit", "Quit", "QUIT"]
 STATE_COLUMN = "state"
@@ -45,13 +46,13 @@ def display_state(s_name, x_pos, y_pos):
 # Set up the screen with the map image
 screen = turtle.Screen()
 screen.title(SCREEN_TITLE)
-image = IMAGE_ADDRESS
+image = IMAGE_FILE_PATH
 screen.addshape(image)
 turtle.shape(image)
 turtle.onscreenclick(get_mouse_click_coordinate)
 
 # Load the data about states from a CSV file
-states_data = pd.read_csv(STATES_CSV_FILE_ADDRESS)
+states_data = pd.read_csv(INPUT_FILE_PATH)
 states_list = []  # List to keep track of correctly guessed states
 correct_answer_count = 0
 total_state_number = len(states_data)
@@ -98,4 +99,4 @@ for state_key in states_list:
     states_to_learn.drop(index=state_index, axis=0, inplace=True)
 
 # Save the states that need to be learned to a CSV file
-states_to_learn.to_csv('states_to_learn.csv', index=False)
+states_to_learn.to_csv(OUTPUT_FILE_PATH, index=False)
