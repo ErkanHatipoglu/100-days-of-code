@@ -27,7 +27,7 @@ def check_user_answer(answer):
     if answer is None:
         return answer, True
     else:
-        return answer.lower(), False
+        return answer.title(), False
 
 
 def display_state(state_name, x_pos, y_pos):
@@ -35,7 +35,7 @@ def display_state(state_name, x_pos, y_pos):
     state_label_writer.hideturtle()
     state_label_writer.penup()
     state_label_writer.goto(x_pos, y_pos)
-    state_label_writer.write(arg=state_name.title(), move=False)
+    state_label_writer.write(arg=state_name, move=False)
 
 
 screen = turtle.Screen()
@@ -46,7 +46,7 @@ turtle.shape(image)
 turtle.onscreenclick(get_mouse_click_coordinate)
 
 states_data = pd.read_csv("50_states.csv")
-states_data["state"] = states_data["state"].str.lower()
+states_data["state"] = states_data["state"]
 correct_answer_count = 0
 total_state_number = len(states_data)
 states_dict = states_data.to_dict()
