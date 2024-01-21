@@ -1,6 +1,6 @@
 # US States Game: Python Dictionary vs. Pandas DataFrame Approaches
 
-This repository hosts two Python implementations (`solution_1` and `solution_2`) of the US States Game, an interactive educational application designed to help users learn US states in an engaging way. Both versions employ similar functionalities with a subtle difference in the data structure and initial presentation.
+This repository hosts two Python implementations ([solution_1](solution_1) and [solution_2](solution_2)) of the US States Game, an interactive educational application designed to help users learn US states in an engaging way. Both versions employ similar functionalities with a subtle difference in the data structure and initial presentation.
 
 ## Table of Contents
 - [General Information](#general-information)
@@ -9,7 +9,7 @@ This repository hosts two Python implementations (`solution_1` and `solution_2`)
 - [Advantages and Disadvantages](#advantages-and-disadvantages)
   - [`solution_1`](#solution_1)
   - [`solution_2`](#solution_2)
-  
+
 ## General Information
 The US States Game is a Python-based interactive application that leverages the turtle library for GUI and pandas library for data handling in `solution_2`. The game challenges users to name all the US states, displaying correctly guessed states on a map.
 
