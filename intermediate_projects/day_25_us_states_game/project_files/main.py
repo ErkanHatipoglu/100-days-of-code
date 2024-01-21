@@ -17,7 +17,6 @@ def extract_result(dictionary, dict_value):
     dictionary_key = get_key(dictionary["state"], dict_value)
     x_pos = dictionary["x"].get(dictionary_key)
     y_pos = dictionary["y"].get(dictionary_key)
-    print(f"x position: {x_pos}, y position:{y_pos}")
     for _ in ["state", "x", "y"]:
         dictionary[_].pop(dictionary_key)
     return dictionary, x_pos, y_pos
@@ -71,5 +70,6 @@ while not game_over:
         display_state(user_answer, x_position, y_position)
     if correct_answer_count == total_state_number:
         game_over = True
-
+states_to_learn = pd.DataFrame(states_dict)
+states_to_learn.to_csv('states_to_learn.csv', index=False)
 turtle.mainloop()
