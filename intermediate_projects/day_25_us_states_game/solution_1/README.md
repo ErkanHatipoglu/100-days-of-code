@@ -26,12 +26,14 @@ The US States Game is an interactive educational tool designed to help users lea
 ## Requirements
 
 - Python 3.x
+- `pandas` library (version 1.0 or higher): `pip install pandas`
 - Turtle graphics library (usually comes pre-installed with Python)
 
 ## References
 
 - [Python Documentation](https://docs.python.org/3/)
 - [Turtle graphics](https://docs.python.org/3/library/turtle.html)
+- [Pandas library](https://pandas.pydata.org/)
 - [OpenAI GPT](https://www.openai.com/)
 
 [<< Back to Intermediate Projects](https://github.com/ErkanHatipoglu/100-days-of-code/tree/main/intermediate_projects) | [Back to Main Page >>](https://github.com/ErkanHatipoglu/100-days-of-code)
