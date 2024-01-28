@@ -44,3 +44,5 @@ The US States Game is a Python-based interactive application that leverages the 
 - **Disadvantages**:
   - Slightly more overhead and potentially slower performance for small datasets due to the use of Pandas.
   - Lack of an initial text title might make the game start less guided.
+
+[<< Back to Intermediate Projects](https://github.com/ErkanHatipoglu/100-days-of-code/tree/main/intermediate_projects) | [Back to Main Page >>](https://github.com/ErkanHatipoglu/100-days-of-code)
