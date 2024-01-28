@@ -21,6 +21,7 @@ Welcome to my repository! This collection showcases my journey through the "[100
 - [Day 22 - Pong Game](intermediate_projects/day_22_pong_game)
 - [Day 23 - Turtle Crossing Game](intermediate_projects/day_23_turtle_crossing_game)
 - [Day 25 - US States Game](intermediate_projects/day_25_us_states_game)
+- [Day 26 - NATO Alphabet](intermediate_projects/day_26_nato_alphabet)
 
 ### [Advanced Projects](advanced_projects/)
 - None yet.
