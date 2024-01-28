@@ -23,9 +23,13 @@ for (index, row) in student_data_frame.iterrows():
 # TODO 1. Create a dictionary in this format:
 
 # Read the csv file
-nato_alphabet = pd.read_csv("nato_phonetic_alphabet.csv")
+nato_phonetic_df = pd.read_csv("nato_phonetic_alphabet.csv")
+
+# Create a dictionary from the DataFrame
+letter_to_phonetic_dict = { row.letter:row.code for (index, row) in nato_phonetic_df.iterrows() }
+
 # Test
-print(nato_alphabet)
+print(letter_to_phonetic_dict)
 
 { "A":"Alfa", "B":"Bravo" }
 
