@@ -1,7 +1,7 @@
 import tkinter
 
 LABEL_FONT = ("Arial", 12, "italic")
-WINDOW_TITLE_TEXT = "Mile to km Converter"
+WINDOW_TITLE_TEXT = "Miles to km Converter"
 WINDOW_WIDTH = 300
 WINDOW_HEIGHT = 100
 PAD_X = 20
