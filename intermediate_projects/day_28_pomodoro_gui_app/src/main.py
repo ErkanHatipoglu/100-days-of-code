@@ -15,7 +15,7 @@ WINDOW_PADX = 100
 WINDOW_PADY = 50
 CANVAS_WIDTH = 200
 CANVAS_HEIGHT = 224
-CANVAS_CENTER_OFFSET = 3
+TEXT_VERTICAL_OFFSET = 18
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
@@ -26,11 +26,13 @@ CANVAS_CENTER_OFFSET = 3
 # ---------------------------- UI SETUP ------------------------------- #
 window = tk.Tk()
 window.title(WINDOW_TITLE)
-window.config(padx=WINDOW_PADX, pady=WINDOW_PADY)
+window.config(padx=WINDOW_PADX, pady=WINDOW_PADY, bg=YELLOW)
 
-canvas = tk.Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
+canvas = tk.Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT, bg=YELLOW, highlightthickness=0)
 tomato_image = tk.PhotoImage(file="assets/images/tomato.png")
-canvas.create_image(CANVAS_WIDTH / 2 + CANVAS_CENTER_OFFSET, CANVAS_HEIGHT / 2, image=tomato_image)
+canvas.create_image(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2, image=tomato_image)
+canvas.create_text(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2 + TEXT_VERTICAL_OFFSET, text="00:00", fill="white",
+                   font=(FONT_NAME, 35, "bold"))
 canvas.pack()
 
 window.mainloop()
