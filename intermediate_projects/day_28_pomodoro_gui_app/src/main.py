@@ -28,11 +28,27 @@ window = tk.Tk()
 window.title(WINDOW_TITLE)
 window.config(padx=WINDOW_PADX, pady=WINDOW_PADY, bg=YELLOW)
 
+timer_label = tk.Label(bg=YELLOW, fg=GREEN)
+timer_label.config(text="Timer", font=(FONT_NAME, 34, "normal"))
+timer_label.grid(row=0, column=1)
+
 canvas = tk.Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT, bg=YELLOW, highlightthickness=0)
 tomato_image = tk.PhotoImage(file="assets/images/tomato.png")
 canvas.create_image(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2, image=tomato_image)
 canvas.create_text(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2 + TEXT_VERTICAL_OFFSET, text="00:00", fill="white",
                    font=(FONT_NAME, 35, "bold"))
-canvas.pack()
+canvas.grid(row=1, column=1)
+
+start_button = tk.Button()
+start_button.config(text="Start", bg="white", fg="blue")
+start_button.grid(row=2, column=0)
+
+reset_button = tk.Button()
+reset_button.config(text="Reset", bg="white", fg="blue")
+reset_button.grid(row=2, column=2)
+
+level_tracking_label = tk.Label()
+level_tracking_label.config(text="✔", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 16, "normal"))
+level_tracking_label.grid(row=4, column=1)
 
 window.mainloop()
