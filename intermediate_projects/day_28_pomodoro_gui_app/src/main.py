@@ -28,9 +28,9 @@ window = tk.Tk()
 window.title(WINDOW_TITLE)
 window.config(padx=WINDOW_PADX, pady=WINDOW_PADY, bg=YELLOW)
 
-timer_label = tk.Label(bg=YELLOW, fg=GREEN)
-timer_label.config(text="Timer", font=(FONT_NAME, 34, "normal"))
-timer_label.grid(row=0, column=1)
+title_label = tk.Label(bg=YELLOW, fg=GREEN)
+title_label.config(text="Timer", font=(FONT_NAME, 34, "normal"))
+title_label.grid(row=0, column=1)
 
 canvas = tk.Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT, bg=YELLOW, highlightthickness=0)
 tomato_image = tk.PhotoImage(file="assets/images/tomato.png")
