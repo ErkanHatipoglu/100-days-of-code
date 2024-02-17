@@ -19,16 +19,26 @@ CANVAS_HEIGHT = 224
 TEXT_VERTICAL_OFFSET = 18
 
 reps = 0
+timer = None
 
 
 # ---------------------------- TIMER RESET ------------------------------- #
 
+def reset_timer():
+    global reps
+    window.after_cancel(timer)
+    title_label.config(text="Timer", fg=GREEN)
+    level_tracking_label.config(text="")
+    canvas.itemconfig(timer_text, text="00:00")
+    reps = 0
+
+
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
     global reps
-    working_seconds = WORK_MIN * 60
-    short_break_seconds = SHORT_BREAK_MIN * 60
-    long_break_seconds = LONG_BREAK_MIN * 60
+    working_seconds = WORK_MIN
+    short_break_seconds = SHORT_BREAK_MIN
+    long_break_seconds = LONG_BREAK_MIN
 
     reps += 1
     if reps > 8:
@@ -55,7 +65,8 @@ def count_down(count):
         seconds_remaining = f"0{seconds_remaining}"
     canvas.itemconfig(timer_text, text=f"{minutes_remaining}:{seconds_remaining}")
     if count > 0:
-        window.after(1000, count_down, count - 1)
+        global timer
+        timer = window.after(1000, count_down, count - 1)
     else:
         start_timer()
         if reps % 2 == 0:
@@ -84,7 +95,7 @@ start_button.config(text="Start", bg="white", fg="blue", command=start_timer)
 start_button.grid(row=2, column=0)
 
 reset_button = tk.Button()
-reset_button.config(text="Reset", bg="white", fg="blue")
+reset_button.config(text="Reset", bg="white", fg="blue", command=reset_timer)
 reset_button.grid(row=2, column=2)
 
 level_tracking_label = tk.Label()
