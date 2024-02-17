@@ -37,13 +37,9 @@ def start_timer():
     if reps == 8:
         count_down(long_break_seconds)
         title_label.config(text="Break", fg=RED)
-        level_tracking_label_text = level_tracking_label.__getitem__("text") + "✔"
-        level_tracking_label.config(text=level_tracking_label_text)
     elif reps % 2 == 0:
         count_down(short_break_seconds)
         title_label.config(text="Break", fg=PINK)
-        level_tracking_label_text = level_tracking_label.__getitem__("text") + "✔"
-        level_tracking_label.config(text=level_tracking_label_text)
     else:
         count_down(working_seconds)
         title_label.config(text="Work", fg=GREEN)
@@ -62,6 +58,9 @@ def count_down(count):
         window.after(1000, count_down, count - 1)
     else:
         start_timer()
+        if reps % 2 == 0:
+            level_tracking_label_text = level_tracking_label.__getitem__("text") + "✔"
+            level_tracking_label.config(text=level_tracking_label_text)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
