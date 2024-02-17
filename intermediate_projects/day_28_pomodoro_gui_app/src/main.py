@@ -18,12 +18,35 @@ CANVAS_WIDTH = 200
 CANVAS_HEIGHT = 224
 TEXT_VERTICAL_OFFSET = 18
 
+reps = 0
+
 
 # ---------------------------- TIMER RESET ------------------------------- #
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
-    count_down(5 * 60)
+    global reps
+    working_seconds = WORK_MIN * 60
+    short_break_seconds = SHORT_BREAK_MIN * 60
+    long_break_seconds = LONG_BREAK_MIN * 60
+
+    reps += 1
+    if reps > 8:
+        reps = 1
+        level_tracking_label.config(text="")
+    if reps == 8:
+        count_down(long_break_seconds)
+        title_label.config(text="Break", fg=RED)
+        level_tracking_label_text = level_tracking_label.__getitem__("text") + "✔"
+        level_tracking_label.config(text=level_tracking_label_text)
+    elif reps % 2 == 0:
+        count_down(short_break_seconds)
+        title_label.config(text="Break", fg=PINK)
+        level_tracking_label_text = level_tracking_label.__getitem__("text") + "✔"
+        level_tracking_label.config(text=level_tracking_label_text)
+    else:
+        count_down(working_seconds)
+        title_label.config(text="Work", fg=GREEN)
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
@@ -37,6 +60,8 @@ def count_down(count):
     canvas.itemconfig(timer_text, text=f"{minutes_remaining}:{seconds_remaining}")
     if count > 0:
         window.after(1000, count_down, count - 1)
+    else:
+        start_timer()
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -64,7 +89,7 @@ reset_button.config(text="Reset", bg="white", fg="blue")
 reset_button.grid(row=2, column=2)
 
 level_tracking_label = tk.Label()
-level_tracking_label.config(text="✔", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 16, "normal"))
+level_tracking_label.config(text="", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 16, "normal"))
 level_tracking_label.grid(row=4, column=1)
 
 window.mainloop()
