@@ -36,9 +36,9 @@ def reset_timer():
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
     global reps
-    working_seconds = WORK_MIN
-    short_break_seconds = SHORT_BREAK_MIN
-    long_break_seconds = LONG_BREAK_MIN
+    working_seconds = WORK_MIN * 60
+    short_break_seconds = SHORT_BREAK_MIN * 60
+    long_break_seconds = LONG_BREAK_MIN * 60
 
     reps += 1
     if reps > 8:
