@@ -1,5 +1,6 @@
 import math
 import tkinter as tk
+from tkinter import messagebox
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -68,6 +69,12 @@ def count_down(count):
         global timer
         timer = window.after(1000, count_down, count - 1)
     else:
+        if reps == 7:
+            messagebox.showinfo("Time for a long break!", "20-minute break time! Stretch, relax, and refresh yourself.")
+        elif reps % 2 == 0:
+            messagebox.showinfo("Back to work!", "Break's over, let's get back to work!")
+        else:  # Work session
+            messagebox.showinfo("Time for a break!", "You've completed a session, time to take a short break.")
         start_timer()
         if reps % 2 == 0:
             level_tracking_label_text = level_tracking_label.__getitem__("text") + "✔"
