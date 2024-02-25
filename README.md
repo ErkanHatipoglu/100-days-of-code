@@ -23,6 +23,7 @@ Welcome to my repository! This collection showcases my journey through the "[100
 - [Day 25 - US States Game](intermediate_projects/day_25_us_states_game)
 - [Day 26 - NATO Alphabet](intermediate_projects/day_26_nato_alphabet)
 - [Day 27 - Miles to km Converter](intermediate_projects/day_27_miles_to_km_converter)
+- [Day 28 - Pomodoro GUI App](intermediate_projects/day_28_pomodoro_gui_app)
 
 ### [Advanced Projects](advanced_projects/)
 - None yet.
