@@ -14,6 +14,7 @@ Welcome to the `intermediate_projects` section of my "100 Days of Code" journey.
 - **[Day 25 - US States Game](day_25_us_states_game)**: Test your knowledge of US geography in this interactive game that challenges you to name all 50 states. Leveraging Turtle graphics and CSV data, the game visualizes your progress on a map, offering a fun and educational way to learn state names and locations. Missed states are recorded, providing a targeted learning opportunity for future review.
 - **[Day 26 - NATO Alphabet](day_26_nato_alphabet)**: "Translating words into NATO phonetic codes interactively, showcasing the use of Pandas for CSV data handling and comprehension techniques in Python."
 - **[Day 27 - Miles to km Converter](day_27_miles_to_km_converter)**: "Miles to km Converter" is a simple and intuitive GUI application built with Tkinter in Python, allowing users to easily convert miles to kilometers."
+- **[Day 28 - Pomodoro GUI App](day_28_pomodoro_gui_app)**: "A productivity tool that employs the Pomodoro technique with a minimalistic GUI for timing work sessions and breaks, enhancing focus and efficiency."
 
 Each project folder includes the source code, a dedicated README, and any additional resources used or created during the development of the project.
 
